@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
-.test {
+@theme {
+  --breakpoint-xs: 450px;
+}
+
+.services-layer {
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+}
+
+.nav-menu-shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
 }
