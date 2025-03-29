@@ -6,11 +6,15 @@ import { GrCart } from 'react-icons/gr';
 import { GiStack } from 'react-icons/gi';
 import { IoSearch } from 'react-icons/io5';
 
+import { TbAirConditioning } from 'react-icons/tb';
+import { MdOutlineHvac } from 'react-icons/md';
+import { MdOutlineWbSunny } from 'react-icons/md';
+
 import { BsTools } from 'react-icons/bs';
 import { CiShoppingCart } from 'react-icons/ci';
 import { FiShoppingCart } from 'react-icons/fi';
 
-import hvac_family from '../assets/images/hvac_family.jpg';
+import hvac_family from '../assets/images/family_hvac.png';
 import split_systems from '../assets/images/split_systems.jpg';
 
 import daikin_img from '../assets/images/daikin_label.png';
@@ -27,6 +31,8 @@ import split_sys1 from '../assets/images/split_sys_1.png';
 
 import project_img from '../assets/images/project.png';
 
+import big_screen_img1 from '../assets/images/big_screen_img1.jpg';
+
 import visa_img from '../assets/images/visa_img.png';
 import mir_img from '../assets/images/mir_img.png';
 import mastercard from '../assets/images/mastercard_img.png';
@@ -34,13 +40,54 @@ import mastercard from '../assets/images/mastercard_img.png';
 const App = () => {
   return (
     <>
-      <header className="flex justify-between">
-        <div className="w-full flex justify-between p-3 border-b-1 border-b-[rgba(114,114,114,0.2)]">
-          <div className="flex items-center">
-            <span className="text-[25px]">Vent</span>
-            <span className="text-[25px] text-[#3b9dca]">Rave</span>
+      <header className="flex justify-between lg:flex-col">
+        {/* ------------ ХЕАДЕР: ПЕРВЫЙ РЯД ---------------- */}
+        {/* ------------ ХЕАДЕР: ПЕРВЫЙ РЯД ---------------- */}
+        {/* ------------ ХЕАДЕР: ПЕРВЫЙ РЯД ---------------- */}
+        <div className="lg:flex items-center justify-between p-4 border-b-1 border-[rgba(114,114,114,0.2)] lg:px-8 xl:px-14 hidden">
+          <div className="flex gap-10">
+            <p className=" text-[15px] text-[#232323]">
+              г. Санкт-Петербург, пр-т Наставников, 40
+            </p>
+            <p className="text-[15px] text-[#6E6E6E]">Пн-Пт 09:00-18:00</p>
           </div>
-          <button className="cursor-pointer">
+          <nav>
+            <ul className="flex gap-3 font-[600] text-[#1B9AE9]">
+              <li className="p-1 cursor-pointer">О компании</li>
+              <li className="p-1 cursor-pointer">Акции и скидки</li>
+              <li className="flex items-center gap-1 cursor-pointer">
+                Сервис
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="mt-[3px] size-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </div>
+              </li>
+              <li className="p-1 cursor-pointer">Контакты</li>
+            </ul>
+          </nav>
+        </div>
+
+        {/* ------------ ХЕАДЕР: ВТОРОЙ РЯД ---------------- */}
+        {/* ------------ ХЕАДЕР: ВТОРОЙ РЯД ---------------- */}
+        {/* ------------ ХЕАДЕР: ВТОРОЙ РЯД ---------------- */}
+        <div className="w-full flex justify-between gap-5 p-3 border-b-1 border-b-[rgba(114,114,114,0.2)] lg:px-8 xl:px-14">
+          <div className="flex items-center">
+            <span className="text-[25px]">Soft</span>
+            <span className="text-[25px] text-[#3b9dca]">Vent</span>
+          </div>
+          <button className="lg:hidden cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -56,7 +103,156 @@ const App = () => {
               />
             </svg>
           </button>
+
+          <div className="w-[100%] gap-4 justify-between lg:flex hidden">
+            <div className="w-[30%] flex items-center gap-3">
+              <button className="p-2 rounded-md bg-[#1B9AE9] cursor-pointer">
+                <HiOutlineViewGrid className="text-[25px] text-[whitesmoke]" />
+              </button>
+              <div className="w-[100%] max-w-[365px] flex items-center bg-gray-200 rounded-md pr-2">
+                <input
+                  className="w-[100%] p-2 outline-none"
+                  placeholder="Поиск"
+                />
+                <div className="cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5 text-gray-500"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex gap-5 items-end">
+              <div className="flex flex-col gap-1 items-center text-nowrap">
+                <p className="text-center text-[14px] font-[600] leading-[16px]">
+                  +7 (981) 755-47-56
+                </p>
+                <p className="text-center text-[14px] leading-[16px] text-[#6E6E6E]">
+                  vb415@bk.ru
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-1 items-center text-nowrap">
+                <p className="text-center text-[14px] font-[600] leading-[16px]">
+                  +7 (981) 755-47-56
+                </p>
+                <button className="flex items-center gap-2 text-[14px] leading-[16px] cursor-pointer">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-4 text-[#6E6E6E]"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                    />
+                  </svg>
+                  <span className="text-left underline decoration-dotted text-[#6E6E6E]">
+                    Заказать обратный звонок
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <ul className="flex gap-3">
+              <li className="flex flex-col items-center">
+                <a className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px]">
+                  <GiStack className="text-[26px]" />
+                  Сравнение
+                </a>
+              </li>
+              <li className="flex flex-col items-center">
+                <a className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px]">
+                  <PiStarBold className="text-[26px]" />
+                  <span>Избранное</span>
+                </a>
+              </li>
+              <li className="flex flex-col items-center">
+                <a className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px]">
+                  <FiShoppingCart className="text-[26px]" />
+                  <span>Корзина</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        {/* ------------ ХЕАДЕР: ТРЕТИЙ РЯД ---------------- */}
+        {/* ------------ ХЕАДЕР: ТРЕТИЙ РЯД ---------------- */}
+        {/* ------------ ХЕАДЕР: ТРЕТИЙ РЯД ---------------- */}
+        <nav>
+          <ul className="p-3 lg:flex items-center gap-15 justify-center hidden">
+            <li className="text-[#6E6E6E] flex items-center gap-1 cursor-pointer">
+              <TbAirConditioning className="text-[#1B9AE9] mt-1 text-[25px] opacity-50" />
+              Кондиционеры{' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="mt-[3px] size-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </li>
+            <li className="text-[#6E6E6E] flex items-center gap-1 cursor-pointer">
+              <MdOutlineHvac className="text-[#1B9AE9] mt-0.5 text-[25px] opacity-50" />
+              Вентиляция{' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="mt-[3px] size-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </li>
+            <li className="text-[#6E6E6E] flex items-center gap-1 cursor-pointer">
+              <MdOutlineWbSunny className="text-[#1B9AE9] mt-1 text-[25px] opacity-50" />
+              Домашний микроклимат{' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="mt-[3px] size-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </li>
+          </ul>
+        </nav>
       </header>
       {/* --------------------------------------------------- MAIN: -------------------------------------------------------------- */}
       {/* --------------------------------------------------- MAIN: -------------------------------------------------------------- */}
@@ -86,21 +282,21 @@ const App = () => {
             </div>
             <div className="rounded-2xl">
               <img
-                className="rounded-2xl w-[100%]"
+                className="rounded-2xl w-[100%] lg:min-h-[440px]"
                 src={hvac_family}
                 alt="семья настраивает кондиционер"
               ></img>
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 lg:grid">
-            <ul className="flex gap-2 lg:gap-4">
+          <div className="flex flex-col gap-2 lg:justify-between">
+            <ul className="flex gap-2 xl:flex-col">
               <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-gray-200 rounded-2xl">
-                <h3 className="text-[14px] font-[500] leading-[14px] z-10 sm:text-[18px] sm:leading-[18px]">
+                <h3 className="text-[14px] font-[500] leading-[14px] z-10 lg:leading-[18px] xl:text-[18px]">
                   <span>Выезд и замеры от инженера - </span>
                   <span className="text-[#1b9ae9]">Бесплатно</span>
                 </h3>
-                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] sm:text-[16px] sm:leading-[18px]">
+                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
                   Произведём замеры, расскажем о ходе работ и договоримся о
                   сроках
                 </p>
@@ -120,10 +316,10 @@ const App = () => {
                 </svg>
               </li>
               <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-blue-200 rounded-2xl">
-                <h3 className="text-[14px] font-[500] leading-[12px] z-10 sm:text-[18px] sm:leading-[18px]">
+                <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
                   Подготовка проекта и сметы
                 </h3>
-                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] sm:text-[16px] sm:leading-[18px]">
+                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
                   Бесплатный подбор и расчет стоимости оборудования, монтажных
                   работ
                 </p>
@@ -144,13 +340,13 @@ const App = () => {
               </li>
             </ul>
 
-            <ul className="flex flex-col gap-2 justify-between xs:flex-row">
-              <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-gray-100 rounded-2xl sm:min-w-[145px]">
-                <h3 className="text-[14px] font-[500] leading-[12px] z-10 sm:text-[18px] sm:leading-[18px]">
+            <ul className="flex flex-col gap-2 justify-between xs:flex-row lg:flex-col lg:justify-end">
+              <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-gray-100 rounded-2xl sm:min-w-[145px] lg:min-h-0">
+                <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
                   Сервисное обслуживание
                 </h3>
 
-                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] sm:text-[16px] sm:leading-[18px]">
+                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
                   Продлим срок работы вашей технике
                 </p>
                 <svg
@@ -159,7 +355,7 @@ const App = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-26 text-gray-200 absolute top-0 left-0 z-0 opacity-70"
+                  className="size-26 text-gray-200 absolute top-0 left-0 z-0 opacity-70 lg:size-17"
                 >
                   <path
                     strokeLinecap="round"
@@ -173,11 +369,11 @@ const App = () => {
                   />
                 </svg>
               </li>
-              <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-blue-200 rounded-2xl">
-                <h3 className="text-[14px] font-[500] leading-[12px] z-10 sm:text-[18px] sm:leading-[18px]">
+              <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-blue-200 rounded-2xl lg:min-h-0">
+                <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
                   Монтаж за 1 день
                 </h3>
-                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] sm:text-[16px] sm:leading-[18px]">
+                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
                   Установка и настройка климатического оборудования от 3-х часов
                 </p>
                 <svg
@@ -186,7 +382,7 @@ const App = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-26 text-blue-300 absolute top-0 left-0 z-0 opacity-30"
+                  className="size-26 text-blue-300 absolute top-0 left-0 z-0 opacity-30 lg:size-17"
                 >
                   <path
                     strokeLinecap="round"
@@ -195,11 +391,11 @@ const App = () => {
                   />
                 </svg>
               </li>
-              <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-orange-100 rounded-2xl">
-                <h3 className="text-[14px] font-[500] leading-[12px] z-10 sm:text-[18px] sm:leading-[18px]">
+              <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-orange-100 rounded-2xl lg:min-h-0">
+                <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
                   Ежемесячные скидки
                 </h3>
-                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] sm:text-[16px] sm:leading-[18px]">
+                <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
                   Большой ассортимент оборудования в наличии на складе
                 </p>
                 <svg
@@ -208,7 +404,7 @@ const App = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-26 absolute text-orange-200 top-0 left-0 z-0 opacity-40"
+                  className="size-26 absolute text-orange-200 top-0 left-0 z-0 opacity-40 lg:size-17"
                 >
                   <path
                     strokeLinecap="round"
@@ -275,8 +471,8 @@ const App = () => {
               </h5>
             </div>
             <p className="text-[#232323] leading-[20px]">
-              У нас вы можете заказать монтаж систем вентиляции,
-              кондиционирования. Наши мастера имеют многолетний опыт.
+              Уточним площадь помещения. Поможем с выбором необходимой
+              климатической техники. Сориентируем по цене.
             </p>
           </li>
 
@@ -290,7 +486,7 @@ const App = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_60_2335)">
+                  <g clipPath="url(#clip0_60_2335)">
                     <rect
                       x="20.7988"
                       y="24.4844"
@@ -331,7 +527,7 @@ const App = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_60_2342)">
+                  <g clipPath="url(#clip0_60_2342)">
                     <path
                       d="M32.8347 15.3727H31.2514V8.08945C31.2514 6.34335 29.8309 4.92285 28.0848 4.92285H25.9404L23.7459 0.977257C23.4115 0.374269 22.775 0 22.0847 0C21.7629 0 21.4438 0.0829737 21.1619 0.239363L12.74 4.92275H3.33262C1.58652 4.92275 0.166016 6.34325 0.166016 8.08935V29.8333C0.166016 31.5794 1.58652 32.9999 3.33262 32.9999H28.0848C29.8309 32.9999 31.2514 31.5794 31.2514 29.8333V23.4475H32.8347V15.3727ZM28.0848 6.18943C29.0601 6.18943 29.8568 6.93038 29.9638 7.87847H27.5838L26.6452 6.18943H28.0848ZM21.7781 1.3464C22.0751 1.17986 22.4748 1.29634 22.6388 1.59217L26.1347 7.87787H10.0319L21.7781 1.3464ZM29.9847 29.8333C29.9847 30.8808 29.1322 31.7333 28.0847 31.7333H3.33262C2.2851 31.7333 1.4326 30.8808 1.4326 29.8333V8.08945C1.4326 7.04193 2.2851 6.18943 3.33262 6.18943H10.4625L7.42513 7.87856H3.72847C3.37824 7.87856 3.09513 8.16227 3.09513 8.5119C3.09513 8.86154 3.37824 9.14524 3.72847 9.14524H5.1471H28.2881H29.9847V15.3733H25.3533C23.2025 15.3733 21.452 17.1238 21.452 19.2745V19.5469C21.452 21.6977 23.2026 23.4482 25.3533 23.4482H29.9847V29.8333ZM31.568 22.1809H31.2514H25.3533C23.9004 22.1809 22.7186 20.9992 22.7186 19.5462V19.2739C22.7186 17.821 23.9004 16.6392 25.3533 16.6392H31.2514H31.568V22.1809Z"
                       fill="#6E6E6E"
@@ -432,9 +628,9 @@ const App = () => {
 
         {/* НЕ МОЖЕТЕ ОПРЕДЕЛИТЬСЯ С ВЫБОРОМ? ПОЗВОНИТЕ НАМ: */}
         <section className="pt-4 px-3 xs:px-8 xl:px-14">
-          <div className="flex flex-col gap-4 pt-4 pb-8 bg-[#B4E2FF] rounded-2xl">
+          <div className="flex flex-col items-center gap-4 pt-4 pb-8 bg-[#B4E2FF] rounded-2xl sm:flex-row">
             <div className="flex flex-col gap-3 px-4">
-              <h3 className="text-center text-[22px] text-[#6E6E6E]">
+              <h3 className="text-[22px] text-[#6E6E6E]">
                 Не можете определиться с выбором?
               </h3>
               <p className="text-[18px] font-[600] leading-[138%] text-[#232323]">
@@ -442,8 +638,59 @@ const App = () => {
                 <span className="text-[#1b9ae9]">+7 (981) 755-47-56</span>,
                 подберем для Вас самый оптимальный вариант!
               </p>
+
+              <ul className="gap-3 mt-4 hidden lg:flex">
+                <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#1B9AE9] rounded-[50%]">
+                  <svg
+                    width="27"
+                    height="16"
+                    viewBox="0 0 27 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M13.2447 15.7716H14.8145C14.8145 15.7716 15.2887 15.7196 15.5307 15.4586C15.7536 15.219 15.7464 14.7691 15.7464 14.7691C15.7464 14.7691 15.7158 12.6628 16.6934 12.3526C17.657 12.0471 18.8945 14.3883 20.2061 15.2885C21.198 15.9699 21.9517 15.8205 21.9517 15.8205L25.4587 15.7716C25.4587 15.7716 27.2934 15.6586 26.4235 14.2161C26.3522 14.0981 25.9169 13.1491 23.8159 11.1989C21.6169 9.15784 21.9114 9.48798 24.5603 5.95737C26.1736 3.80721 26.8185 2.4945 26.6171 1.93227C26.4249 1.39678 25.2384 1.53832 25.2384 1.53832L21.2896 1.56292C21.2896 1.56292 20.9969 1.52299 20.7798 1.65276C20.5676 1.78004 20.4311 2.07666 20.4311 2.07666C20.4311 2.07666 19.8061 3.74054 18.9726 5.15556C17.2142 8.14141 16.5112 8.29899 16.2238 8.1136C15.5553 7.6815 15.7222 6.37771 15.7222 5.45147C15.7222 2.55797 16.1611 1.35151 14.8676 1.03919C14.4384 0.935448 14.1225 0.866996 13.0248 0.855944C11.6158 0.841327 10.4233 0.860222 9.74801 1.19107C9.2988 1.41104 8.95226 1.90126 9.16332 1.92942C9.42429 1.96436 10.0154 2.08879 10.3288 2.51554C10.7334 3.066 10.7192 4.30241 10.7192 4.30241C10.7192 4.30241 10.9516 7.70859 10.1762 8.13178C9.64391 8.42199 8.91376 7.82945 7.34614 5.12062C6.54291 3.73305 5.93647 2.19931 5.93647 2.19931C5.93647 2.19931 5.81953 1.91267 5.61097 1.75936C5.35784 1.57362 5.00417 1.51443 5.00417 1.51443L1.25181 1.53903C1.25181 1.53903 0.688508 1.55472 0.481727 1.79965C0.297764 2.01748 0.46711 2.46812 0.46711 2.46812C0.46711 2.46812 3.40483 9.34109 6.73115 12.8047C9.78117 15.9802 13.2447 15.7716 13.2447 15.7716Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </li>
+                <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#39a150] rounded-[50%]">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.7886 13.0073L15.7808 13.0725C13.8686 12.1195 13.6686 11.9925 13.4217 12.3629C13.2504 12.6194 12.7513 13.2012 12.6008 13.3733C12.4487 13.5429 12.2974 13.5559 12.0391 13.4386C11.7782 13.3081 10.9409 13.0342 9.94958 12.1473C9.17742 11.456 8.65917 10.6082 8.50613 10.3473C8.25135 9.90732 8.78438 9.84472 9.26959 8.92648C9.35655 8.74387 9.3122 8.60039 9.24785 8.47083C9.18264 8.3404 8.66352 7.06216 8.44613 6.55261C8.23744 6.04479 8.02266 6.10914 7.86179 6.10914C7.36094 6.06566 6.99486 6.07262 6.67225 6.40826C5.2688 7.95084 5.62271 9.54211 6.82355 11.2343C9.18351 14.3229 10.4409 14.8916 12.74 15.6811C13.3608 15.8785 13.9269 15.8507 14.3747 15.7863C14.8738 15.7072 15.9112 15.1594 16.1277 14.5464C16.3494 13.9333 16.3494 13.4246 16.2842 13.3073C16.2199 13.1899 16.0495 13.1247 15.7886 13.0073Z"
+                      fill="white"
+                    ></path>
+                    <path
+                      d="M18.4085 3.56487C11.7226 -2.89847 0.657602 1.78926 0.653254 10.9073C0.653254 12.7299 1.13064 14.5073 2.04018 16.0768L0.56543 21.4349L6.07401 19.9985C12.9478 23.7114 21.4311 18.7811 21.4346 10.9126C21.4346 8.15087 20.3563 5.55179 18.3955 3.59879L18.4085 3.56487ZM19.6972 10.8839C19.692 17.5211 12.4061 21.6662 6.64357 18.2785L6.33053 18.0924L3.06973 18.9402L3.94362 15.7707L3.7358 15.4446C0.149786 9.73605 4.2697 2.27534 11.0626 2.27534C13.3704 2.27534 15.5364 3.17532 17.1677 4.80572C18.7981 6.42221 19.6972 8.58825 19.6972 10.8839Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </li>
+                <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#1B9AE9] rounded-[50%]">
+                  <svg
+                    width="22"
+                    height="20"
+                    viewBox="0 0 22 20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.06442 9.60754L5.87319 11.4972L7.73448 17.7993C7.85358 18.2029 8.32238 18.3521 8.63354 18.0843L11.314 15.7836C11.595 15.5426 11.9952 15.5306 12.2889 15.755L17.1235 19.4505C17.4564 19.7052 17.928 19.5132 18.0114 19.0897L21.5531 1.15375C21.6442 0.691166 21.2125 0.305261 20.7941 0.475619L1.05878 8.49114C0.571758 8.68889 0.576001 9.41485 1.06442 9.60754ZM7.43452 10.4913L16.8326 4.39714C17.0016 4.28794 17.1753 4.52839 17.0303 4.67003L9.2741 12.2607C9.00147 12.5279 8.82561 12.8854 8.7758 13.2735L8.51159 15.335C8.4766 15.6102 8.10937 15.6375 8.03723 15.3711L7.02109 11.6121C6.90471 11.1833 7.07431 10.7253 7.43452 10.4913Z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </li>
+              </ul>
             </div>
-            <div className="pl-6">
+            <div className="pl-6 ml-auto">
               <img
                 className="w-[100%] rounded-l-[300px]"
                 src={split_systems}
@@ -453,58 +700,87 @@ const App = () => {
         </section>
 
         {/* О НАС: */}
-        <section className="p-3 xs:px-8 xl:px-14">
+        <section className="flex p-3 xs:px-8 xl:px-14">
           <div className="">
             <h3 className="pb-4 text-[22px]">О Нас</h3>
-            <p>
-              Климатическая компания "ВентРэйв" – это надежный партнер для тех,
-              кто стремится создать комфортные условия для жизни и работы в
-              любых помещениях. Наша компания предлагает высококачественные
-              системы кондиционирования, вентиляции от ведущих мировых
-              производителей. Компания "ВентРэйв" осуществляет полный комплекс
-              услуг, начиная от проектирования и монтажа климатических систем и
-              заканчивая их обслуживанием. Мы гарантируем высокое качество всех
-              выполняемых работ и строго соблюдаем установленные сроки.
-            </p>
-            <a
-              className="mt-4 h-[54px] w-[60%] flex items-center justify-center text-[16px] leading-[20px] font-[600] text-[#1B9AE9] border-1 border-blue-300 rounded-2xl"
-              href="#"
-            >
-              Подробнее о нас
-            </a>
+            <div className="flex gap-3">
+              <div>
+                <p>
+                  Климатическая компания "СофтВент" – это надежный партнер для
+                  тех, кто стремится создать комфортные условия для жизни и
+                  работы в любых помещениях. Наша компания предлагает
+                  высококачественные системы кондиционирования, вентиляции от
+                  ведущих мировых производителей. Компания "СофтВент"
+                  осуществляет полный комплекс услуг, начиная от проектирования
+                  и монтажа климатических систем и заканчивая их обслуживанием.
+                  Мы гарантируем высокое качество всех выполняемых работ и
+                  строго соблюдаем установленные сроки.
+                </p>
+                <a
+                  className="mt-4 h-[54px] w-[60%] flex items-center justify-center text-[16px] leading-[20px] font-[600] text-[#1B9AE9] border-1 border-blue-300 rounded-2xl"
+                  href="#"
+                >
+                  Подробнее о нас
+                </a>
+              </div>
+              <div className="lg:flex items-start hidden">
+                <img className="rounded-2xl" src={big_screen_img1}></img>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ИНДИВИДУАЛЬНЫЕ УСЛОВИЯ (ДЛЯ ПРОЕКТИРОВЩИКОВ И ДИЗАЙНЕРОВ): */}
-        <section
-          className="mx-3 p-3 bg-cover bg-center rounded-2xl xs:mx-8 xl:px-14"
-          style={{ backgroundImage: `url(${project_img})` }}
-        >
-          <div className="h-full w-[80%] p-3 bg-gray-200 opacity-90 rounded-2xl xs:w-[65%]">
-            <h2 className="text-left pb-2 text-[22px] leading-[27px]">
-              Индивидуальные условия для проектировщиков и дизайнеров
-            </h2>
-            <p className="text-left text-[14px] leading-[130%] xs:text-[16px] sm:text-[18px]">
-              Наша совместная работа может помочь в создании более эффективных и
-              удобных климатических решений в любых помещениях.
-            </p>
-            <div className="text-[#1b9ae9] font-[600]">+7 (981) 755-47-56</div>
-          </div>
-        </section>
+        <section className="flex flex-col gap-5 p-3 xs:px-8 xl:px-14 lg:flex-row">
+          <div
+            className="flex items-center justify-start gap-10 p-3 bg-cover bg-center rounded-2xl lg:p-10 lg:min-h-[400px] lg:gap-20"
+            style={{ backgroundImage: `url(${project_img})` }}
+          >
+            <div className="w-[80%] flex flex-col justify-center p-3 bg-gray-200 opacity-90 rounded-2xl xs:w-[65%] lg:gap-5">
+              <h2 className="text-left pb-2 text-[22px] leading-[27px] lg:text-center">
+                Индивидуальные условия для проектировщиков и дизайнеров
+              </h2>
+              <p className="text-left text-[14px] leading-[130%] xs:text-[16px] sm:text-[18px] lg:text-center">
+                Наша совместная работа может помочь в создании более эффективных
+                и удобных климатических решений в любых помещениях.
+              </p>
+              <div className="text-[#1b9ae9] font-[600] lg:text-center">
+                +7 (981) 755-47-56
+              </div>
+            </div>
 
-        {/* НАШИ ПАРТНЕРЫ: */}
-        <section className="pt-4 p-3 xs:px-8 xl:px-14">
-          <h2 className="text-center pb-4 text-[22px]">Наши Партнеры</h2>
-          <ul className="flex flex-col gap-3">
-            <li className="flex gap-4 justify-center">
-              <img className="h-[34px]" src={daikin_img}></img>
-              <img className="h-[34px]" src={lessar_img}></img>
-            </li>
-            <li className="flex gap-4 justify-center">
-              <img className="h-[34px]" src={lg_img}></img>
-              <img className="h-[34px]" src={royalcli_img}></img>
-            </li>
-          </ul>
+            <div className="p-3 gap-3 bg-gray-200 opacity-90 rounded-2xl hidden xl:flex">
+              <div className="flex flex-col justify-center gap-4">
+                <button className="">Проектировщикам</button>
+                <button className="">Монтажникам</button>
+                <button className="">Маркетплейсам</button>
+                <button className="">Клиентам</button>
+              </div>
+              <div>
+                <ul className="flex flex-col gap-2">
+                  <li className="">Оборудование от производителя.</li>
+                  <li className="">Специальные условия.</li>
+                  <li className="">Оборудование в наличии на складе.</li>
+                  <li className="">Соблюдение сроков.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* НАШИ ПАРТНЕРЫ: */}
+          <div className="min-w-[300px] flex flex-col items-center justify-start">
+            <h2 className="text-center pb-4 text-[22px]">Наши Партнеры</h2>
+            <ul className="flex flex-col gap-3">
+              <li className="flex gap-4 justify-center items-center lg:flex-col">
+                <img className="h-[34px]" src={daikin_img}></img>
+                <img className="h-[34px]" src={lessar_img}></img>
+              </li>
+              <li className="flex gap-4 justify-center items-center lg:flex-col">
+                <img className="h-[34px]" src={lg_img}></img>
+                <img className="h-[34px]" src={royalcli_img}></img>
+              </li>
+            </ul>
+          </div>
         </section>
       </main>
 
@@ -614,100 +890,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <div className="flex items-center justify-between p-4 border-b-1 border-[rgba(114,114,114,0.2)]">
-        <p>г. Санкт-Петербург, пр-т Наставников, 40</p>
-        <p>Пн-Пт 09:00-18:00</p>
-        <nav>
-          <ul className="flex gap-3">
-            <li className="p-1 cursor-pointer">О компании</li>
-            <li className="p-1 cursor-pointer">Акции и скидки</li>
-            <li className="flex items-center gap-1 cursor-pointer">
-              Сервис
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="mt-[3px] size-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </div>
-            </li>
-            <li className="p-1 cursor-pointer">Контакты</li>
-          </ul>
-        </nav>
-      </div>
-
-      <div className="flex gap-4 px-5 justify-between">
-        <div className="flex items-center">
-          <span>Vent</span>
-          <span>Rave</span>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <button className="p-2 rounded-md bg-[#1B9AE9] cursor-pointer">
-            <HiOutlineViewGrid className="text-[25px] text-[whitesmoke]" />
-          </button>
-          <div className="flex items-center relative">
-            <input
-              className="p-2 pr-8 bg-gray-200 rounded-md outline-none"
-              placeholder="Поиск"
-            />
-            <div className="absolute left-[190px] cursor-pointer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                className="size-5 text-gray-500"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex gap-5">
-          <div className="flex flex-col">
-            <p className="text-center">+7 (981) 755-47-56</p>
-            <p className="text-center">vb415@bk.ru</p>
-          </div>
-
-          <div className="flex flex-col">
-            <p className="text-center">+7 (981) 755-47-56</p>
-            <a className="text-center" href="#">
-              Заказать обратный звонок
-            </a>
-          </div>
-        </div>
-
-        <ul className="flex gap-5">
-          <li className="flex flex-col items-center">
-            <GiStack className="text-[25px]" />
-            Сравнение
-          </li>
-          <li className="flex flex-col items-center">
-            <CiStar className="text-[25px]" />
-            Избранное
-          </li>
-          <li className="flex flex-col items-center">
-            <GrCart className="text-[25px]" /> Корзина
-          </li>
-        </ul>
-      </div>
-      <div></div> */
-}
