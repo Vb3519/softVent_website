@@ -2,12 +2,19 @@
 
 @theme {
   --breakpoint-xs: 450px;
+  --breakpoint-3xl: 1620px;
 }
 
 .services-layer {
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
 }
 
-.nav-menu-shadow {
+.elem-shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+}
+
+.elem-display {
+  display: grid;
+  grid-template-columns: 1fr, 315px;
+  justify-content: space-between;
 }
