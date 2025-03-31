@@ -5,7 +5,7 @@ import big_screen_img1 from '../../assets/images/big_screen_img1.jpg';
 /* О НАС: */
 const AboutUs = () => {
   return (
-    <section className="flex mb-3 p-3 xs:px-8 xl:px-14 lg:mb-10">
+    <section className="flex mb-3 p-3 xs:px-8 xl:px-14 lg:mb-10 2xl:px-[200px] 2xl:my-25">
       <div className="">
         <h3 className="pb-4 text-[22px]">О Нас</h3>
         <div className="flex gap-3">

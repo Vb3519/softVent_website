@@ -1,27 +1,60 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import split_systems from '../../../assets/images/split_systems.jpg';
 
 /* НЕ МОЖЕТЕ ОПРЕДЕЛИТЬСЯ С ВЫБОРОМ? ПОЗВОНИТЕ НАМ: */
 const SelectionHelpContacts = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
-    <section className="pt-4 mb-3 px-3 xs:px-8 xl:px-14 lg:mb-10">
+    <section
+      className="pt-4 mb-3 px-3 xs:px-8 xl:px-14 lg:mb-10 2xl:px-[200px]"
+      ref={ref}
+    >
       <div className="flex flex-col items-center gap-4 pt-4 pb-8 bg-gradient-to-r from-[#B4E2FF] to-blue-300 rounded-2xl sm:flex-row elem-shadow">
         <div className="flex flex-col gap-3 px-4">
-          <h3 className="text-[22px] text-[#6E6E6E]">
+          <h3
+            className={`text-[22px] text-[#6E6E6E] 2xl:text-[24px] relative top-[-15px] opacity-0 ${
+              inView ? 'selection-help-container-animation' : ''
+            }`}
+          >
             Не можете определиться с выбором?
           </h3>
-          <p className="text-[18px] font-[600] leading-[138%] text-[#232323]">
+          <p
+            className={`text-[18px] font-[600] leading-[138%] text-[#232323] 2xl:text-[20px] relative top-[15px] opacity-0 ${
+              inView ? 'selection-help-container-animation' : ''
+            }`}
+          >
             Позвоните нам{' '}
             <span className="text-[#1b9ae9]">+7 (981) 755-47-56</span>, подберем
             для Вас самый оптимальный вариант!
           </p>
 
           {/* СОЦСЕТИ: ВКОНТАКТЕ, ВОТСАП, ТЕЛЕГРАМ */}
-          <Socials />
+          <div className="lg:flex hidden">
+            <div
+              className={`flex gap-5 items-center relative top-[15px] opacity-0 ${
+                inView ? 'selection-help-container-animation' : ''
+              }`}
+            >
+              <Socials />
+              <p className="mt-3 text-[16px] font-[600] leading-[138%] text-[#232323] 2xl:text-[18px]">
+                Или просто напишите нам!
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="pl-6 ml-auto">
-          <img className="w-[100%] rounded-l-[300px]" src={split_systems}></img>
+        <div className="pl-6 ml-auto overflow-x-hidden">
+          <img
+            className={`w-[100%] relative left-[150px] opacity-0 rounded-l-[300px] ${
+              inView ? 'selection-help-container-animation' : ''
+            }`}
+            src={split_systems}
+          ></img>
         </div>
       </div>
     </section>

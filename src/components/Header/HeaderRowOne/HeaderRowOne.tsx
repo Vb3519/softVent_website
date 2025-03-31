@@ -3,7 +3,7 @@ import React from 'react';
 /* ------------ ХЕАДЕР: ПЕРВЫЙ РЯД ---------------- */
 const HeaderRowOne = () => {
   return (
-    <div className="lg:flex items-center justify-between p-4 border-b-1 border-[rgba(114,114,114,0.2)] lg:px-8 xl:px-14 hidden">
+    <div className="lg:flex items-center justify-between p-4 border-b-1 border-[rgba(114,114,114,0.2)] lg:px-8 xl:px-14 2xl:px-50 hidden">
       <div className="flex gap-10">
         <p className=" text-[15px] text-[#232323]">
           г. Санкт-Петербург, пр-т Наставников, 40

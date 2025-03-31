@@ -1,18 +1,18 @@
 import React from 'react';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
-import Header from './Header/Header';
+import MainLayout from './Layouts/MainLayout';
 import Main from './Main/Main';
-import Footer from './Footer/Footer';
-import FooterMobileNavMenu from './Footer/FooterMobileNavMenu';
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-      <FooterMobileNavMenu />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index={true} element={<Main />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
 };
 

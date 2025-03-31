@@ -2,7 +2,6 @@
 
 @theme {
   --breakpoint-xs: 450px;
-  --breakpoint-3xl: 1620px;
 }
 
 .services-layer {
@@ -17,4 +16,15 @@
   display: grid;
   grid-template-columns: 1fr, 315px;
   justify-content: space-between;
+}
+
+.selection-help-container-animation {
+  opacity: 1;
+  top: 0;
+  left: 0;
+  transition: opacity 1.5s, top 1s, left 1.5s;
+}
+
+.mobile-menu-opened {
+  overflow: hidden;
 }

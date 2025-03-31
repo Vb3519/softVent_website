@@ -10,7 +10,7 @@ import bg2 from '../../../assets/images/bg_2.jpg';
 /* СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ (КАРТОЧКА ТОВАРА): */
 const SpecialOffers = () => {
   return (
-    <section className="pt-4 mb-3 px-3 xs:px-8 sm:mb-5 xl:px-14 lg:mb-10 2xl:px-[320px]">
+    <section className="pt-4 mb-3 px-3 xs:px-8 sm:mb-5 xl:px-31 lg:mb-10 2xl:px-[320px]">
       <div>
         <h2 className="text-center pb-4  text-[22px]">
           Специальные предложения

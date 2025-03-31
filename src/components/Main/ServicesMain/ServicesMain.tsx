@@ -4,8 +4,8 @@ import hvac_family from '../../../assets/images/family_hvac.png';
 
 const ServicesMain = () => {
   return (
-    <section className="flex flex-col mb-3 gap-4 px-3 xs:px-8 lg:mb-10 lg:flex-row xl:px-14 2xl:px-[200px] 2xl:elem-display">
-      {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- 2xl:elem-display 2xl:min-h-[605px] */}
+    <section className="flex flex-col mb-3 gap-4 px-3 xs:px-8 lg:mb-10 lg:flex-row xl:px-14 2xl:px-50 2xl:elem-display">
+      {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       <div className="relative lg:min-w-[500px]">
@@ -42,11 +42,11 @@ const ServicesMain = () => {
       <div className="flex flex-col gap-2 lg:justify-between">
         <ul className="flex gap-2 xl:flex-col">
           <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-gray-200 rounded-2xl elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[14px] z-10 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[14px] z-5 lg:leading-[18px] xl:text-[18px]">
               <span>Выезд и замеры от инженера - </span>
               <span className="text-[#1b9ae9]">Бесплатно</span>
             </h3>
-            <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
               Произведём замеры, расскажем о ходе работ и договоримся о сроках
             </p>
             <svg
@@ -65,10 +65,10 @@ const ServicesMain = () => {
             </svg>
           </li>
           <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-blue-200 rounded-2xl elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Подготовка проекта и сметы
             </h3>
-            <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
               Бесплатный подбор и расчет стоимости оборудования, монтажных работ
             </p>
             <svg
@@ -93,11 +93,11 @@ const ServicesMain = () => {
         {/* ----- СЕРВИС, МОНТАЖ СКИДКИ: ---- */}
         <ul className="flex flex-col gap-2 justify-between xs:flex-row lg:flex-col lg:justify-end">
           <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-gray-100 rounded-2xl sm:min-w-[145px] lg:min-h-0 elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Сервисное обслуживание
             </h3>
 
-            <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
               Продлим срок работы вашей технике
             </p>
             <svg
@@ -121,10 +121,10 @@ const ServicesMain = () => {
             </svg>
           </li>
           <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-blue-200 rounded-2xl lg:min-h-0 elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Монтаж за 1 день
             </h3>
-            <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
               Установка и настройка климатического оборудования от 3-х часов
             </p>
             <svg
@@ -143,10 +143,10 @@ const ServicesMain = () => {
             </svg>
           </li>
           <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-orange-100 rounded-2xl lg:min-h-0 elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-10 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Ежемесячные скидки
             </h3>
-            <p className="text-[12px] leading-[12px] z-10 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
               Большой ассортимент оборудования в наличии на складе
             </p>
             <svg

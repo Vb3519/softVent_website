@@ -3,8 +3,8 @@ import React from 'react';
 /* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ КОМПАНИИ (ДЕТАЛИЗАЦИЯ): */
 const ServicesList = () => {
   return (
-    <ul className="lg:flex gap-4 px-8 mt-8 hidden">
-      <li className="flex flex-col gap-4">
+    <ul className="lg:flex gap-8 px-8 my-8 hidden 2xl:my-25 2xl:px-25">
+      <li className="flex flex-col gap-4 rounded-bl-3xl rounded-tr-3xl p-4 bg-gradient-to-r from-gray-100 to-gray-300">
         <div className="flex gap-3 items-center">
           <div className="p-2 bg-gray-100 rounded-md">
             <svg
@@ -34,7 +34,7 @@ const ServicesList = () => {
         </p>
       </li>
 
-      <li className="flex flex-col gap-4">
+      <li className="flex flex-col gap-4 rounded-bl-3xl rounded-tr-3xl p-4 bg-gradient-to-r from-gray-100 to-gray-200">
         <div className="flex gap-3 items-center">
           <div className="p-2 bg-gray-100 rounded-md">
             <svg
@@ -61,7 +61,7 @@ const ServicesList = () => {
         </p>
       </li>
 
-      <li className="flex flex-col gap-4">
+      <li className="flex flex-col gap-4 rounded-bl-3xl rounded-tr-3xl p-4 bg-gradient-to-r from-gray-100 to-gray-300">
         <div className="flex gap-3 items-center">
           <div className="p-2 bg-gray-100 rounded-md">
             <svg
@@ -102,7 +102,7 @@ const ServicesList = () => {
         </p>
       </li>
 
-      <li className="flex flex-col gap-4">
+      <li className="flex flex-col gap-4 rounded-bl-3xl rounded-tr-3xl p-4 bg-gradient-to-r from-gray-100 to-gray-200">
         <div className="flex gap-3 items-center">
           <div className="p-2 bg-gray-100 rounded-md">
             <svg
