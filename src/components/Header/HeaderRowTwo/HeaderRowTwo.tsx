@@ -1,15 +1,22 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { HiOutlineViewGrid } from 'react-icons/hi';
 import { GiStack } from 'react-icons/gi';
 import { PiStarBold } from 'react-icons/pi';
 import { FiShoppingCart } from 'react-icons/fi';
 
+import {
+  selectMobileMenuState,
+  toggleMobileMenu,
+} from '../../../redux/slices/mobileMenuSlice';
+
 /* ------------ ХЕАДЕР: ВТОРОЙ РЯД ---------------- */
 const HeaderRowTwo = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpened, setIsMobileMenuOpened] = useState(false);
+  const dispatch = useDispatch();
+
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const isMobileMenuOpened: boolean = useSelector(selectMobileMenuState);
 
   // "Прилипание" меню навигации при скролле:
   const handlePageScoll = () => {
@@ -32,10 +39,10 @@ const HeaderRowTwo = () => {
   // Открытие / закрытие мобильного меню навигации (каталога):
   const handleMobileMenuOpen = () => {
     if (!isMobileMenuOpened) {
-      setIsMobileMenuOpened(true);
+      dispatch(toggleMobileMenu());
       document.body.classList.add('mobile-menu-opened');
     } else {
-      setIsMobileMenuOpened(false);
+      dispatch(toggleMobileMenu());
       document.body.classList.remove('mobile-menu-opened');
     }
   };
