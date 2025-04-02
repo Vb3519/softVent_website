@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 /* ------------ ХЕАДЕР: ПЕРВЫЙ РЯД ---------------- */
 const HeaderRowOne = () => {
@@ -12,10 +13,14 @@ const HeaderRowOne = () => {
       </div>
       <nav>
         <ul className="flex gap-3 font-[600] text-[#1B9AE9]">
-          <li className="p-1 cursor-pointer">О компании</li>
-          <li className="p-1 cursor-pointer">Акции и скидки</li>
+          <li className="p-1 cursor-pointer">
+            <NavLink to="about">О компании</NavLink>
+          </li>
+          <li className="p-1 cursor-pointer">
+            <NavLink to="promotions">Акции и скидки</NavLink>
+          </li>
           <li className="flex items-center gap-1 cursor-pointer">
-            Сервис
+            <NavLink to="service">Сервис</NavLink>
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +38,9 @@ const HeaderRowOne = () => {
               </svg>
             </div>
           </li>
-          <li className="p-1 cursor-pointer">Контакты</li>
+          <li className="p-1 cursor-pointer">
+            <NavLink to="contacts">Контакты</NavLink>
+          </li>
         </ul>
       </nav>
     </div>

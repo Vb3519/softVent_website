@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import hvac_family from '../../../assets/images/family_hvac.png';
 
@@ -20,12 +21,12 @@ const ServicesMain = () => {
           <p className="mb-1 text-[12px] xs:text-[14px] sm:text-[18px]">
             Широкий выбор систем кондиционирования с гарантией от производителя
           </p>
-          <a
-            href="#"
+          <NavLink
+            to="catalog"
             className="w-fit h-full mt-2 p-2 text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] xs:mt-6 sm:mt-8 sm:text-[18px] md:min-w-[110px] lg:min-w-[140px]"
           >
             Каталог
-          </a>
+          </NavLink>
         </div>
         <div className="rounded-2xl elem-shadow">
           <img
@@ -43,11 +44,11 @@ const ServicesMain = () => {
         <ul className="flex gap-2 xl:flex-col">
           <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-gray-200 rounded-2xl elem-shadow">
             <h3 className="text-[14px] font-[500] leading-[14px] z-5 lg:leading-[18px] xl:text-[18px]">
-              <span>Выезд и замеры от инженера - </span>
+              <span>Выезд инженера на объект - </span>
               <span className="text-[#1b9ae9]">Бесплатно</span>
             </h3>
             <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
-              Произведём замеры, расскажем о ходе работ и договоримся о сроках
+              Осуществим замеры, обсудим сроки и расскажем о ходе работ
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +99,7 @@ const ServicesMain = () => {
             </h3>
 
             <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
-              Продлим срок работы вашей технике
+              Продлим срок работы вашего оборудования
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +126,7 @@ const ServicesMain = () => {
               Монтаж за 1 день
             </h3>
             <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
-              Установка и настройка климатического оборудования от 3-х часов
+              Установка и настройка климатической техники от 3-х часов
             </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -54,8 +55,10 @@ const HeaderRowTwo = () => {
       }`}
     >
       <div className="flex items-center">
-        <span className="text-[25px]">Soft</span>
-        <span className="text-[25px] text-[#3b9dca]">Vent</span>
+        <NavLink to="/">
+          <span className="text-[25px]">Soft</span>
+          <span className="text-[25px] text-[#3b9dca]">Vent</span>
+        </NavLink>
       </div>
       <button
         className="lg:hidden cursor-pointer"
@@ -136,22 +139,31 @@ const HeaderRowTwo = () => {
 
         <ul className="flex gap-3 2xl:gap-8">
           <li className="flex flex-col items-center">
-            <a className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]">
+            <NavLink
+              to="select-device"
+              className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
+            >
               <GiStack className="text-[26px]" />
               Сравнение
-            </a>
+            </NavLink>
           </li>
           <li className="flex flex-col items-center">
-            <a className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]">
+            <NavLink
+              to="whishlist"
+              className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
+            >
               <PiStarBold className="text-[26px]" />
               <span>Избранное</span>
-            </a>
+            </NavLink>
           </li>
           <li className="flex flex-col items-center">
-            <a className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]">
+            <NavLink
+              to="cart"
+              className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
+            >
               <FiShoppingCart className="text-[26px]" />
               <span>Корзина</span>
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>

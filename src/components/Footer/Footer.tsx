@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import visa_img from '../../assets/images/visa_img.png';
 import mir_img from '../../assets/images/mir_img.png';
@@ -10,10 +11,12 @@ const Footer = () => {
   return (
     <footer className="mt-4 pb-4 flex flex-col gap-3 px-3 bg-[#F5F5F5] xs:px-8 xl:px-14">
       <div className="flex flex-col gap-1 justify-center pt-5 lg:flex-row lg:gap-5 lg:pb-2 xl:gap-10">
-        <div className="hidden items-center mb-auto mr-5 lg:flex">
-          <span className="text-[25px]">Soft</span>
-          <span className="text-[25px] text-[#3b9dca]">Vent</span>
-        </div>
+        <NavLink to="/">
+          <div className="hidden items-center mb-auto mr-5 lg:flex">
+            <span className="text-[25px]">Soft</span>
+            <span className="text-[25px] text-[#3b9dca]">Vent</span>
+          </div>
+        </NavLink>
 
         <div>
           <div className="flex justify-between">
@@ -37,13 +40,15 @@ const Footer = () => {
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Кондиционеры
+              <NavLink to="catalog/split-systems">Кондиционеры</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Вентиляция
+              <NavLink to="catalog/ventilation-units">Вентиляция</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Домашний микроклимат
+              <NavLink to="catalog/home-microclimate">
+                Домашний микроклимат
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -70,10 +75,10 @@ const Footer = () => {
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Акции и скидки
+              <NavLink to="promotions">Акции и скидки</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              О компании
+              <NavLink to="about">О компании</NavLink>
             </li>
           </ul>
         </div>
@@ -98,19 +103,19 @@ const Footer = () => {
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Доставка
+              <NavLink to="service/delivery">Доставка</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Оплата
+              <NavLink to="service/payment">Оплата</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Проектирование
+              <NavLink to="service/design">Проектирование</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Монтаж
+              <NavLink to="service/installation">Монтаж</NavLink>
             </li>
             <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Гарантия
+              <NavLink to="service/guarantee">Гарантия</NavLink>
             </li>
           </ul>
         </div>

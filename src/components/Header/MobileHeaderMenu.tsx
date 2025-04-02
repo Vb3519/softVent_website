@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { selectMobileMenuState } from '../../redux/slices/mobileMenuSlice';
@@ -62,13 +63,15 @@ const MobileHeaderMenu = () => {
 
           <ul className="flex flex-col gap-2 py-3">
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Кондиционеры
+              <NavLink to="catalog/split-systems">Кондиционеры</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Вентиляция
+              <NavLink to="catalog/ventilation-units">Вентиляция</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Домашний микроклимат
+              <NavLink to="catalog/home-microclimate">
+                Домашний микроклимат
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -96,10 +99,10 @@ const MobileHeaderMenu = () => {
           </div>
           <ul className="flex flex-col gap-2 py-3">
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Акции и скидки
+              <NavLink to="promotions">Акции и скидки</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              О компании
+              <NavLink to="about">О компании</NavLink>
             </li>
           </ul>
         </div>
@@ -128,19 +131,19 @@ const MobileHeaderMenu = () => {
           </div>
           <ul className="flex flex-col gap-2 pt-3">
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Доставка
+              <NavLink to="service/delivery">Доставка</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Оплата
+              <NavLink to="service/payment">Оплата</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Проектирование
+              <NavLink to="service/design">Проектирование</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Монтаж
+              <NavLink to="service/installation">Монтаж</NavLink>
             </li>
             <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              Гарантия
+              <NavLink to="service/guarantee">Гарантия</NavLink>
             </li>
           </ul>
         </div>
