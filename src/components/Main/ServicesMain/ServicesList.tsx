@@ -1,9 +1,15 @@
 import React from 'react';
 
+interface ServicesListType {
+  className?: string;
+}
+
 /* ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ КОМПАНИИ (ДЕТАЛИЗАЦИЯ): */
-const ServicesList = () => {
+const ServicesList = ({ className }: ServicesListType) => {
   return (
-    <ul className="lg:flex gap-8 px-8 my-8 hidden 2xl:my-25 2xl:px-25">
+    <ul
+      className={`lg:flex gap-8 px-8 my-8 hidden 2xl:my-25 2xl:px-25 ${className}`}
+    >
       <ServicesListElem
         className="bg-gradient-to-r from-gray-100 to-gray-300"
         icon={

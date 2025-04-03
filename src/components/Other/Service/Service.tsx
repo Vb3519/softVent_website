@@ -72,6 +72,7 @@ const Service = () => {
 export default Service;
 
 interface ServiceDetailsType {
+  className?: string;
   link: string;
   icon: React.ElementType;
   title: string;
@@ -79,6 +80,7 @@ interface ServiceDetailsType {
 }
 
 const ServiceDetails: React.FC<ServiceDetailsType> = ({
+  className,
   link,
   icon: Icon,
   title,

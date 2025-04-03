@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { GiStack } from 'react-icons/gi';
+import { FcCalculator } from 'react-icons/fc';
 import { PiStarBold } from 'react-icons/pi';
 import { FiShoppingCart } from 'react-icons/fi';
 
@@ -143,8 +143,8 @@ const HeaderRowTwo = () => {
               to="select-device"
               className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
             >
-              <GiStack className="text-[26px]" />
-              Сравнение
+              <FcCalculator className="text-[26px]" />
+              <span className="font-[inter]">Подбор</span>
             </NavLink>
           </li>
           <li className="flex flex-col items-center">
@@ -153,7 +153,7 @@ const HeaderRowTwo = () => {
               className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
             >
               <PiStarBold className="text-[26px]" />
-              <span>Избранное</span>
+              <span className="font-[inter]">Избранное</span>
             </NavLink>
           </li>
           <li className="flex flex-col items-center">
@@ -162,7 +162,7 @@ const HeaderRowTwo = () => {
               className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
             >
               <FiShoppingCart className="text-[26px]" />
-              <span>Корзина</span>
+              <span className="font-[inter]">Корзина</span>
             </NavLink>
           </li>
         </ul>

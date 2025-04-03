@@ -10,7 +10,7 @@ const ServicesMain = () => {
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       <div className="relative lg:min-w-[500px]">
-        <div className="h-full w-[70%] max-w-[400px] absolute top-0 left-0 rounded-tl-2xl rounded-bl-2xl bg-gray-200 opacity-60 services-layer"></div>
+        <div className="h-full w-[70%] max-w-[400px] absolute top-0 left-0 rounded-tl-2xl rounded-bl-2xl bg-gray-200 opacity-60 services-layer md:max-w-[450px]"></div>
         <div className="w-[50%] max-w-[400px] flex flex-col absolute left-4 top-4">
           <span className="text-[12px] font-[500] text-[#6E6E6E] mb-2 xs:text-[14px] sm:text-[18px]">
             Настенные кондиционеры
@@ -30,7 +30,7 @@ const ServicesMain = () => {
         </div>
         <div className="rounded-2xl elem-shadow">
           <img
-            className="rounded-2xl w-[100%] lg:min-h-[440px] 2xl:max-h-[1075px]"
+            className="rounded-2xl w-[100%] lg:min-h-[460px] 2xl:max-h-[1075px]"
             src={hvac_family}
             alt="семья настраивает кондиционер"
           ></img>
