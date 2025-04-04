@@ -52,7 +52,7 @@ const AboutCompany = () => {
         <div className="flex flex-col relative gap-1 p-3 my-5 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 elem-shadow">
           <h2 className="mb-3 text-left text-[22px] font-[600]">Наша миссия</h2>
           <BsQuote className="text-[30px] absolute top-[55px] left-[3px] text-[gray] opacity-20 z-0" />
-          <p className="pl-5 text-[15px] leading-[20px] sm:text-[17px] lg:text-[19px] lg:leading-[25px]">
+          <p className="pl-5 text-[15px] leading-[20px] italic sm:text-[17px] lg:text-[19px] lg:leading-[25px]">
             Вентиляционное оборудование — это не просто техническая
             необходимость, а ключ к созданию здоровой и комфортной среды.
             Правильная вентиляция способствует не только физическому

@@ -20,10 +20,8 @@ import SplitSystems from './Other/Catalog/SplitSystems';
 import VentilationUnits from './Other/Catalog/VentilationUnits';
 import HomeMicroClimate from './Other/Catalog/HomeMicroClimate';
 
-import SelectDeviceProgram from './Other/SelectDeviceProgram/SelectDeviceProgram';
 import WhishList from './Other/WhishList';
 import ShoppingCart from './Other/ShoppingCart';
-import Search from './Other/Search';
 
 const App = () => {
   return (
@@ -58,10 +56,8 @@ const App = () => {
           />
           {/* ------------ */}
 
-          <Route path="select-device" element={<SelectDeviceProgram />} />
           <Route path="whishlist" element={<WhishList />} />
           <Route path="cart" element={<ShoppingCart />} />
-          <Route path="search" element={<Search />} />
         </Route>
       </Routes>
     </HashRouter>

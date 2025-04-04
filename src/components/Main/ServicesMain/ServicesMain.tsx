@@ -28,9 +28,9 @@ const ServicesMain = () => {
             Каталог
           </NavLink>
         </div>
-        <div className="rounded-2xl elem-shadow">
+        <div className="rounded-2xl elem-shadow xl:max-w-[900px] xl:min-h-[485px]">
           <img
-            className="rounded-2xl w-[100%] lg:min-h-[460px] 2xl:max-h-[1075px]"
+            className="rounded-2xl w-[100%] lg:min-h-[460px] xl:min-h-[485px] 2xl:max-h-[1075px]"
             src={hvac_family}
             alt="семья настраивает кондиционер"
           ></img>
@@ -42,7 +42,7 @@ const ServicesMain = () => {
       {/* ----- ВЫЕЗД, ПРОЕКТ и СМЕТА: ---- */}
       <div className="flex flex-col gap-2 lg:justify-between">
         <ul className="flex gap-2 xl:flex-col">
-          <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-gray-200 rounded-2xl elem-shadow">
+          <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-gray-200 rounded-2xl elem-shadow xl:min-h-[80px]">
             <h3 className="text-[14px] font-[500] leading-[14px] z-5 lg:leading-[18px] xl:text-[18px]">
               <span>Выезд инженера на объект - </span>
               <span className="text-[#1b9ae9]">Бесплатно</span>
@@ -56,7 +56,7 @@ const ServicesMain = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-26 text-gray-300 absolute top-0 left-0 z-0 opacity-70"
+              className="size-26 text-gray-300 absolute top-0 left-2 z-0 opacity-70 lg:size-17"
             >
               <path
                 strokeLinecap="round"
@@ -65,7 +65,7 @@ const ServicesMain = () => {
               />
             </svg>
           </li>
-          <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-blue-200 rounded-2xl elem-shadow">
+          <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-blue-200 rounded-2xl elem-shadow xl:min-h-[80px]">
             <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Подготовка проекта и сметы
             </h3>
@@ -78,7 +78,7 @@ const ServicesMain = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-26 text-blue-300 absolute top-0 left-0 z-0 opacity-50"
+              className="size-22 text-blue-300 absolute top-2 left-0 z-0 opacity-50 lg:size-17"
             >
               <path
                 strokeLinecap="round"
@@ -93,7 +93,7 @@ const ServicesMain = () => {
         {/* ----- СЕРВИС, МОНТАЖ СКИДКИ: ---- */}
         {/* ----- СЕРВИС, МОНТАЖ СКИДКИ: ---- */}
         <ul className="flex flex-col gap-2 justify-between xs:flex-row lg:flex-col lg:justify-end">
-          <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-gray-100 rounded-2xl sm:min-w-[145px] lg:min-h-0 elem-shadow">
+          <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-gray-100 rounded-2xl sm:min-w-[145px] lg:min-h-0 2xl:min-h-[70px] elem-shadow">
             <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Сервисное обслуживание
             </h3>
@@ -107,7 +107,7 @@ const ServicesMain = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-26 text-gray-200 absolute top-0 left-0 z-0 opacity-70 lg:size-17"
+              className="size-26 text-gray-200 absolute top-0 left-1 z-0 opacity-70 lg:size-17"
             >
               <path
                 strokeLinecap="round"
@@ -121,7 +121,7 @@ const ServicesMain = () => {
               />
             </svg>
           </li>
-          <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-blue-200 rounded-2xl lg:min-h-0 elem-shadow">
+          <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-blue-200 rounded-2xl lg:min-h-0 2xl:min-h-[70px] elem-shadow">
             <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Монтаж за 1 день
             </h3>
@@ -134,7 +134,7 @@ const ServicesMain = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-26 text-blue-300 absolute top-0 left-0 z-0 opacity-30 lg:size-17"
+              className="size-26 text-blue-300 absolute top-0 left-1 z-0 opacity-30 lg:size-17"
             >
               <path
                 strokeLinecap="round"
@@ -143,7 +143,7 @@ const ServicesMain = () => {
               />
             </svg>
           </li>
-          <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-orange-100 rounded-2xl lg:min-h-0 elem-shadow">
+          <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-orange-100 rounded-2xl lg:min-h-0 2xl:min-h-[70px] elem-shadow">
             <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
               Ежемесячные скидки
             </h3>
@@ -156,7 +156,7 @@ const ServicesMain = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="size-26 absolute text-orange-200 top-0 left-0 z-0 opacity-40 lg:size-17"
+              className="size-26 absolute text-orange-200 top-0 left-1 z-0 opacity-40 lg:size-17"
             >
               <path
                 strokeLinecap="round"

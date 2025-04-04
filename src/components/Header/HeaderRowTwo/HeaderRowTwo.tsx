@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { FcCalculator } from 'react-icons/fc';
 import { PiStarBold } from 'react-icons/pi';
 import { FiShoppingCart } from 'react-icons/fi';
 
@@ -21,7 +20,7 @@ const HeaderRowTwo = () => {
 
   // "Прилипание" меню навигации при скролле:
   const handlePageScoll = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > 65) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -138,15 +137,6 @@ const HeaderRowTwo = () => {
         </div>
 
         <ul className="flex gap-3 2xl:gap-8">
-          <li className="flex flex-col items-center">
-            <NavLink
-              to="select-device"
-              className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px]"
-            >
-              <FcCalculator className="text-[26px]" />
-              <span className="font-[inter]">Подбор</span>
-            </NavLink>
-          </li>
           <li className="flex flex-col items-center">
             <NavLink
               to="whishlist"
