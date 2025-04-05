@@ -12,13 +12,13 @@ import InfoSection from '../../UI/InfoSection';
 const Service = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
         <span>/ Сервис</span>
       </div>
-      <h2 className="text-left text-[22px] font-[600]">Сервис</h2>
+      <h2 className="font-[inter] text-left text-[22px] font-[600]">Сервис</h2>
       <ul className="mt-5 flex flex-col gap-5 md:grid grid-cols-3 grid-rows-2 ms:gap-10">
         <ServiceDetails
           link="delivery"
@@ -87,13 +87,13 @@ const ServiceDetails: React.FC<ServiceDetailsType> = ({
   description,
 }) => {
   return (
-    <li className="p-4 rounded-4xl bg-[#eaeaea] transition duration-200 ease-in border-1 border-transparent elem-shadow hover:border-gray-300 group">
+    <li className="font-[inter] p-4 rounded-4xl bg-[#eaeaea] transition duration-200 ease-in border-1 border-transparent elem-shadow hover:border-gray-300 group">
       <NavLink to={link} className="flex flex-col gap-3">
         <Icon className="text-[55px] text-gray-400 opacity-30 transition duration-200 ease-in group-hover:opacity-50" />
-        <h2 className="text-[17px] font-[600] lg:text-[20px] transition duration-200 ease-in group-hover:text-[#1B9AE9]">
+        <h2 className="text-[16px] font-[600] lg:text-[20px] transition duration-200 ease-in group-hover:text-[#1B9AE9]">
           {title}
         </h2>
-        <p className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+        <p className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
           {description}
         </p>
       </NavLink>

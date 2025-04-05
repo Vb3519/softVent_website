@@ -8,7 +8,7 @@ interface ServicesListType {
 const ServicesList = ({ className }: ServicesListType) => {
   return (
     <ul
-      className={`lg:flex gap-8 px-8 my-8 hidden 2xl:my-25 2xl:px-25 ${className}`}
+      className={`font-[inter] lg:flex gap-8 px-8 my-8 hidden 2xl:my-25 2xl:px-25 ${className}`}
     >
       <ServicesListElem
         className="bg-gradient-to-r from-gray-100 to-gray-300"
@@ -150,9 +150,13 @@ const ServicesListElem: React.FC<ServicesListElemType> = ({
     >
       <div className="flex gap-3 items-center">
         <div className="p-2 bg-gray-100 rounded-md">{icon}</div>
-        <h5 className="text-[16px] font-[600] text-[#232323]">{title}</h5>
+        <h5 className="text-[15px] font-[600] text-[#232323] xl:text-[16px]">
+          {title}
+        </h5>
       </div>
-      <p className="text-[#232323] leading-[20px]">{description}</p>
+      <p className="text-[14px] text-[#232323] leading-[20px] xl:text-[15px]">
+        {description}
+      </p>
     </li>
   );
 };

@@ -41,10 +41,12 @@ const MobileHeaderMenu = () => {
       {/* --- КАТАЛОГ: --- */}
       {/* --- КАТАЛОГ: --- */}
       {/* --- КАТАЛОГ: --- */}
-      <div className="flex flex-col gap-1 py-5 border-b-1 border-b-gray-200 md:flex-row md:justify-between">
+      <div className="font-[inter] flex flex-col gap-1 py-5 border-b-1 border-b-gray-200 md:flex-row md:justify-between">
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-1">
-            <p className="text-[17px] text-[#232323] font-[600]">Каталог</p>
+            <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
+              Каталог
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -61,14 +63,14 @@ const MobileHeaderMenu = () => {
             </svg>
           </div>
 
-          <ul className="flex flex-col gap-2 py-3">
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+          <ul className="flex flex-col gap-2 py-3 text-[14px] leading-[20px] xs:text-[16px]">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="catalog/split-systems">Кондиционеры</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="catalog/ventilation-units">Вентиляция</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="catalog/home-microclimate">
                 Домашний микроклимат
               </NavLink>
@@ -81,7 +83,9 @@ const MobileHeaderMenu = () => {
         {/* --- ПОКУПАТЕЛЯМ: --- */}
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-1">
-            <p className="text-[17px] text-[#232323] font-[600]">Покупателям</p>
+            <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
+              Покупателям
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -97,11 +101,11 @@ const MobileHeaderMenu = () => {
               />
             </svg>
           </div>
-          <ul className="flex flex-col gap-2 py-3">
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+          <ul className="flex flex-col gap-2 py-3 text-[14px] leading-[20px] xs:text-[16px]">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="promotions">Акции и скидки</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="about">О компании</NavLink>
             </li>
           </ul>
@@ -113,7 +117,9 @@ const MobileHeaderMenu = () => {
 
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-1">
-            <p className="text-[17px] text-[#232323] font-[600]">Сервис</p>
+            <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
+              Сервис
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -129,20 +135,20 @@ const MobileHeaderMenu = () => {
               />
             </svg>
           </div>
-          <ul className="flex flex-col gap-2 pt-3">
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+          <ul className="flex flex-col gap-2 pt-3 text-[14px] leading-[20px] xs:text-[16px]">
+            <li className="text-[#232323]hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="service/delivery">Доставка</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="service/payment">Оплата</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="service/design">Проектирование</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="service/installation">Монтаж</NavLink>
             </li>
-            <li className="text-[16px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
+            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
               <NavLink to="service/guarantee">Гарантия</NavLink>
             </li>
           </ul>
@@ -150,7 +156,7 @@ const MobileHeaderMenu = () => {
       </div>
 
       {/* --- ТЕЛ. / РЕЖИМ РАБОТЫ / АДРЕС / ЭЛ. ПОЧТА: --- */}
-      <ul className="flex flex-col gap-3 py-3">
+      <ul className="flex flex-col gap-3 py-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <li className="flex flex-col gap-1">
           <p className="flex gap-1 text-center text-[#6E6E6E]">
             Телефоны для связи:{' '}
@@ -172,29 +178,29 @@ const MobileHeaderMenu = () => {
               Заказать звонок
             </span>
           </p>
-          <p className="text-[17px] font-[600] text-[#1B9AE9]">
+          <p className="text-[17px] font-[500] text-[#1B9AE9]">
             +7 (981) 755-47-56
           </p>
         </li>
         <li>
           <p className="text-[#6E6E6E]">Режим работы:</p>
-          <p className="font-[600]">Пн-Пт 10:00-19:00</p>
+          <p className="font-[500]">Пн-Пт 10:00-19:00</p>
         </li>
         <li>
           <p className="text-[#6E6E6E]">
             Наш адрес: <span>Показать на карте</span>
           </p>
-          <p className="font-[600]">г. Санкт-Петербург, пр-т Наставников, 40</p>
+          <p className="font-[500]">г. Санкт-Петербург, пр-т Наставников, 40</p>
         </li>
         <li>
           <p className="text-[#6E6E6E]">Или напишите нам:</p>
-          <p className="font-[600]">Vb415@bk.ru</p>
+          <p className="font-[500]">Vb415@bk.ru</p>
         </li>
       </ul>
 
       {/* --- СОЦ. СЕТИ: --- */}
       <ul className="flex gap-3 pt-4 border-t-1 border-t-gray-200">
-        <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer">
+        <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
           <svg
             width="27"
             height="16"
@@ -210,7 +216,7 @@ const MobileHeaderMenu = () => {
             ></path>
           </svg>
         </li>
-        <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#39a150] rounded-[50%] cursor-pointer">
+        <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#39a150] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#39a14fe1] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
           <svg
             width="22"
             height="22"
@@ -228,7 +234,7 @@ const MobileHeaderMenu = () => {
             ></path>
           </svg>
         </li>
-        <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer">
+        <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
           <svg
             width="22"
             height="20"

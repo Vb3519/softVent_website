@@ -10,19 +10,10 @@ import { Socials } from '../Main/SelectionHelpContacts/SelectionHelpContacts';
 const Footer = () => {
   return (
     <footer className="mt-4 pb-4 flex flex-col gap-3 px-3 bg-[#F5F5F5] xs:px-8 xl:px-14">
-      <div className="flex flex-col gap-1 justify-center pt-5 lg:flex-row lg:gap-5 lg:pb-2 xl:gap-10">
-        <NavLink to="/">
-          <div className="hidden items-center mb-auto mr-5 lg:flex">
-            <span className="text-[25px]">Soft</span>
-            <span className="text-[25px] text-[#3b9dca]">Vent</span>
-          </div>
-        </NavLink>
-
+      <div className="font-[inter] flex flex-col gap-1 justify-center pt-5 lg:flex-row lg:gap-5 lg:pb-2 xl:gap-10">
         <div>
-          <div className="flex justify-between">
-            <p className="pt-2 text-[18px] text-[#232323] font-[600]">
-              Каталог
-            </p>
+          <div className="flex justify-between items-center">
+            <p className="text-[16px] text-[#232323] font-[500]">Каталог</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -39,14 +30,27 @@ const Footer = () => {
             </svg>
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="catalog/split-systems">Кондиционеры</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="catalog/split-systems"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Кондиционеры
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="catalog/ventilation-units">Вентиляция</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="catalog/ventilation-units"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Вентиляция
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="catalog/home-microclimate">
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="catalog/home-microclimate"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
                 Домашний микроклимат
               </NavLink>
             </li>
@@ -54,10 +58,8 @@ const Footer = () => {
         </div>
 
         <div className="lg:pl-5 lg:border-l-1 border-gray-200">
-          <div className="flex justify-between">
-            <p className="pt-2 text-[18px] text-[#232323] font-[600]">
-              Покупателям
-            </p>
+          <div className="flex justify-between items-center">
+            <p className="text-[16px] text-[#232323] font-[500]">Покупателям</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -74,18 +76,28 @@ const Footer = () => {
             </svg>
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="promotions">Акции и скидки</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="promotions"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Акции и скидки
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="about">О компании</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="about"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                О компании
+              </NavLink>
             </li>
           </ul>
         </div>
 
         <div className="lg:pl-5 lg:border-l-1 border-gray-200">
-          <div className="flex justify-between">
-            <p className="pt-2 text-[18px] text-[#232323] font-[600]">Сервис</p>
+          <div className="flex justify-between items-center">
+            <p className="text-[16px] text-[#232323] font-[500]">Сервис</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -102,27 +114,52 @@ const Footer = () => {
             </svg>
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="service/delivery">Доставка</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="service/delivery"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Доставка
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="service/payment">Оплата</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="service/payment"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Оплата
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="service/design">Проектирование</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="service/design"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Проектирование
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="service/installation">Монтаж</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="service/installation"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Монтаж
+              </NavLink>
             </li>
-            <li className="text-[17px] text-[#232323] leading-[20px] hover:cursor-pointer hover:text-[#1b9ae9] hover:underline">
-              <NavLink to="service/guarantee">Гарантия</NavLink>
+            <li className="text-[16px] text-[#232323] leading-[20px]">
+              <NavLink
+                to="service/guarantee"
+                className="hover:text-[#1B9AE9] transition duration-200 ease-in"
+              >
+                Гарантия
+              </NavLink>
             </li>
           </ul>
         </div>
 
         <div className="lg:pl-5 lg:border-l-1 border-gray-200">
-          <div className="flex justify-between">
-            <p className="pt-2 text-[18px] text-[#232323] font-[600]">
+          <div className="flex justify-between items-center">
+            <p className="text-[16px] text-[#232323] font-[500]">
               Связаться с нами
             </p>
             <svg
@@ -141,27 +178,27 @@ const Footer = () => {
             </svg>
           </div>
           <ul className="hidden lg:flex flex-col pt-5 text-nowrap">
-            <li className="text-[17px] text-[#1b9ae9] font-[600] hover:cursor-pointer hover:underline">
+            <li className="text-[15px] text-[#232323] font-[500]">
               +7 (981) 755-47-56
             </li>
-            <li className="text-[17px] text-[#1b9ae9] font-[600] hover:cursor-pointer hover:underline">
+            <li className="text-[15px] text-[#6E6E6E] font-[500]">
               vb415@bk.ru
             </li>
-            <li className="my-3 text-[17px] text-[#232323]">
+            <li className="my-3 text-[15px] text-[#232323]">
               г. Санкт-Петербург,
               <span className="block">пр-т. Наставников, 40</span>{' '}
-              <span className="text-[15px] text-[#6E6E6E]">
+              <span className="text-[14px] text-[#6E6E6E]">
                 (Пн-Пт 09:00-18:00)
               </span>
             </li>
           </ul>
         </div>
         <div className="max-w-[400px] hidden flex-col pl-5 border-l-1 border-gray-200 xl:flex">
-          <p className="pt-2 text-[18px] text-[#232323] font-[600]">
+          <p className="text-[16px] text-[#232323] font-[500]">
             Мы в соц. сетях
           </p>
           <Socials />
-          <p className="pt-3 text-[15px] text-[#6E6E6E] leading-[20px]">
+          <p className="font-[inter] pt-3 text-[#6E6E6E] text-[12px] leading-[12px] xs:text-[14px] lg:leading-[18px]">
             "СофтВент" — проектно-монтажная организация, поставщик
             отечественного вентиляционного оборудования и систем
             кондиционирования. Будем рады сотрудничеству со всеми
@@ -170,7 +207,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="pt-3 pb-14 flex flex-col gap-3 border-t-1 border-t-[rgba(114,114,114,0.2)] text-[12px] leading-[138%] text-[#232323] xs:text-[14px] sm:text-[16px] lg:pb-0 lg:flex-row lg:items-center">
+      <div className="font-[inter] pt-3 pb-14 flex flex-col gap-3 border-t-1 border-t-[rgba(114,114,114,0.2)] text-[12px] leading-[14px] text-[#232323] sm:text-[14px] lg:pb-0 lg:flex-row lg:items-center">
         <p>
           2025 © Интернет-магазин систем кондиционирования, вентиляции и
           отопления. Все права защищены.
@@ -183,7 +220,7 @@ const Footer = () => {
 
         <div className="flex gap-1 text-nowrap lg:px-5 lg:ml-auto">
           Разработка сайта -
-          <span className="text-[#1b9ae9]">Бордюгов Виктор</span>
+          <span className="text-[#1b9ae9] font-[500]">Бордюгов Виктор</span>
         </div>
       </div>
     </footer>

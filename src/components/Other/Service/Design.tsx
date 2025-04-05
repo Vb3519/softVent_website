@@ -7,7 +7,7 @@ import project_img from '../../../assets/images/project.png';
 const Design = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
@@ -16,20 +16,22 @@ const Design = () => {
         </NavLink>
         <span>/ Проектирование</span>
       </div>
-      <h2 className="text-left text-[22px] font-[600]">Проектирование</h2>
+      <h2 className="font-[inter] text-left text-[22px] font-[600]">
+        Проектирование
+      </h2>
       <div className="p-4 flex flex-col gap-5 justify-center items-center bg-[#F5FCFF] elem-shadow lg:flex-row lg:items-start">
         <div className="flex flex-col gap-5">
-          <p className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <p className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             Проектирование систем вентиляции и кондиционирования - это
             комплексная процедура, связанная с подготовкой документации по
             формированию и монтажу сетей соответствующего назначения. Услуга
             востребована при строительстве производственных предприятий,
             муниципальных и частных объектов.
           </p>
-          <h3 className="font-[600] text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <h3 className="font-[600] font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             Проектные материалы содержат следующую информацию:
           </h3>
-          <ul className="flex flex-col gap-2 text-[14px] leading-[20px] list-disc pl-5 sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <ul className="flex flex-col gap-2 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px] list-disc pl-5 ">
             <li>
               Спецификация материалов для прокладки систем вентиляции и
               кондиционирования;
@@ -44,7 +46,7 @@ const Design = () => {
               корректную работу системы вентиляции и кондиционирования;
             </li>
           </ul>
-          <p className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <p className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             Проект системы вентиляции включает исчерпывающие сведения касаемо
             цен. В нем прописана стоимость оборудования и материалов, обозначены
             расходы на монтажные, демонтажные и пуско-наладочные работы.
@@ -58,15 +60,13 @@ const Design = () => {
           ></img>
         </div>
       </div>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
-        <h3 className="mb-5 font-[600] text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
-          Задачи проектирования:
-        </h3>
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
+        <h3 className="mb-5 font-[600]">Задачи проектирования:</h3>
         <p className="mb-2">
           Разработка проекта вентиляции и кондиционирования способствует решению
           следующих задач.
         </p>
-        <ul className="flex flex-col gap-2 text-[14px] leading-[20px] list-disc pl-5 sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+        <ul className="flex flex-col gap-2 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px] list-disc pl-5">
           <li>
             Расчет объема подачи и удаления воздуха в жилую или техническую
             зону;

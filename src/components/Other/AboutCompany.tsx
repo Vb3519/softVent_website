@@ -7,13 +7,15 @@ import InfoSection from '../UI/InfoSection';
 const AboutCompany = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
         <span>/ О компании</span>
       </div>
-      <h1 className="text-left text-[22px] font-[600]">О компании</h1>
+      <h1 className="font-[inter] text-left text-[22px] font-[600]">
+        О компании
+      </h1>
       <div className="flex flex-col gap-5">
         <DescriptionText>
           Компания "СофтВент" – работает в сфере климатических систем с 2012
@@ -49,10 +51,10 @@ const AboutCompany = () => {
           помещениях различного назначения.
         </DescriptionText>
 
-        <div className="flex flex-col relative gap-1 p-3 my-5 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 elem-shadow">
-          <h2 className="mb-3 text-left text-[22px] font-[600]">Наша миссия</h2>
+        <div className="font-[inter] flex flex-col relative gap-1 p-3 my-5 rounded-2xl bg-gradient-to-r from-gray-200 to-gray-300 elem-shadow">
+          <h2 className="mb-3 text-left text-[22px] font-[500]">Наша миссия</h2>
           <BsQuote className="text-[30px] absolute top-[55px] left-[3px] text-[gray] opacity-20 z-0" />
-          <p className="pl-5 text-[15px] leading-[20px] italic sm:text-[17px] lg:text-[19px] lg:leading-[25px]">
+          <p className="pl-5 text-[15px] leading-[20px] italic sm:text-[16px] lg:text-[17px] lg:leading-[25px]">
             Вентиляционное оборудование — это не просто техническая
             необходимость, а ключ к созданию здоровой и комфортной среды.
             Правильная вентиляция способствует не только физическому
@@ -60,10 +62,10 @@ const AboutCompany = () => {
             продуктивность и качество жизни.
           </p>
 
-          <p className="mt-3 text-[16px] font-[600] leading-[20px] sm:text-[18px] lg:text-[20px] lg:leading-[25px]">
+          <p className="mt-3 text-[16px] font-[500] leading-[20px] sm:text-[18px] lg:text-[20px] lg:leading-[25px]">
             Генеральный Директор
           </p>
-          <p className="mt-1 text-[16px] font-[600] text-[#1B9AE9] sm:text-[18px] lg:text-[20px] lg:leading-[25px]">
+          <p className="mt-1 text-[16px] font-[500] text-[#1B9AE9] sm:text-[18px] lg:text-[20px] lg:leading-[25px]">
             ООО "СофтВент"
           </p>
         </div>
@@ -102,7 +104,7 @@ interface CompanyDetails {
 
 const DescriptionText: React.FC<CompanyDetails> = ({ children }) => {
   return (
-    <p className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+    <p className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
       {children}
     </p>
   );

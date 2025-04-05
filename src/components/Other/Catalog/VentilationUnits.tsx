@@ -10,13 +10,18 @@ import hvacUnitsData from '../../../data/hvacUnitsData';
 const VentilationUnits = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
+        <NavLink to="/catalog" className="text-[#1B9AE9]">
+          <span className="text-[#232323]">/</span> Каталог{' '}
+        </NavLink>
         <span>/ Вентиляция</span>
       </div>
-      <h2 className="text-left text-[22px] font-[600]">Вентиляция</h2>
+      <h2 className="font-[inter] text-left text-[22px] font-[600]">
+        Вентиляционные установки
+      </h2>
       <div className="flex flex-col gap-5 items-center">
         <form className="w-full max-w-[780px] font-[inter] grid grid-cols-2 p-3 text-[14px] leading-[20px] bg-[#F5F5F5] rounded-2xl xs:p-6 md:grid-cols-3 sm:text-[16px] lg:text-[18px] lg:leading-[25px] xl:mb-6">
           <div className="pb-3 border-b-1 border-b-gray-300 xs:flex xs:flex-col xs:items-center">
@@ -93,12 +98,15 @@ const VentilationUnits = () => {
               </div>
             </fieldset>
           </div>
+          <button className="p-2 mt-3 col-span-2 mx-auto w-[150px] text-[14px] text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] sm:text-[18px] cursor-pointer sm:w-[200px] xs:mt-6 md:col-span-3">
+            Сбросить фильтры
+          </button>
         </form>
 
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
           {hvacUnitsData.map((hvacUnitInfo) => {
             return (
-              <div className="max-w-[650px] p-4 border-1 border-gray-300 rounded-2xl xs:flex">
+              <div className="font-[inter] max-w-[650px] p-4 border-1 border-gray-300 rounded-2xl xs:flex">
                 <div className="xs:pr-1 xs:border-r-1 xs:border-r-gray-300">
                   <div className="flex align-center justify-between gap-1">
                     <p
@@ -163,7 +171,7 @@ const VentilationUnits = () => {
                   <div className="text-[20px] font-[600] text-nowrap mt-2 mb-2 sm:text-[24px] lg:text-[35px]">
                     {hvacUnitInfo.price} ₽
                   </div>
-                  <button className="min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer lg:w-[100%] lg:p-3 lg:text-[18px]">
+                  <button className="min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)]">
                     В корзину <CiShoppingCart className="text-[25px]" />
                   </button>
                 </div>
@@ -173,7 +181,7 @@ const VentilationUnits = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="flex flex-col gap-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <p>
           Также с предлагаемым нами оборудованием, Вы можете ознакомиться в{' '}
           <NavLink to="/catalog" className="font-[600] text-[#1b9ae9]">

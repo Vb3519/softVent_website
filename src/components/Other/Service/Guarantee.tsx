@@ -7,7 +7,7 @@ import guarantee_img from '../../../assets/images/guarantee_img.jpg';
 const Guarantee = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
@@ -16,19 +16,21 @@ const Guarantee = () => {
         </NavLink>
         <span>/ Гарантия</span>
       </div>
-      <h2 className="text-left text-[22px] font-[600]">Гарантия</h2>
+      <h2 className="font-[inter] text-left text-[22px] font-[600]">
+        Гарантия
+      </h2>
       <div className="p-4 flex flex-col gap-5 justify-center items-center bg-[#F5FCFF] elem-shadow lg:flex-row lg:items-start">
         <div className="flex flex-col gap-5">
-          <p className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <p className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             Компания "СофтВент" осуществляет сервисное обслуживание систем
             вентиляции, кондиционирования и дымоудаления. В нашем штате работают
             компетентные специалисты с многолетним опытом, сервисные работы
             подразумевают применение профильной техники и расходных материалов.
           </p>
-          <h3 className="font-[600] text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <h3 className="font-[600] font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             При организации сервисных мероприятий учитываются следующие факторы:
           </h3>
-          <ul className="flex flex-col gap-2 text-[14px] leading-[20px] list-disc pl-5 sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <ul className="flex flex-col gap-2 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px] list-disc pl-5">
             <li>Конструктивные особенности системы;</li>
             <li>Параметры использования оборудования;</li>
             <li>
@@ -50,14 +52,14 @@ const Guarantee = () => {
           ></img>
         </div>
       </div>
-      <h3 className="font-[600] text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <h3 className="font-[600] font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         Кто может заказать обслуживание?
       </h3>
-      <p className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <p className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         Воспользоваться предложением компании могут следующие категории
         клиентов:
       </p>
-      <ul className="flex flex-col gap-2 text-[14px] leading-[20px] list-disc pl-5 sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <ul className="flex flex-col gap-2 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px] list-disc pl-5">
         <li>
           <span className="font-[600]">Частные лица.</span> В рамках работы с
           частными лицами обслуживаются инженерные системы коттеджей и квартир.

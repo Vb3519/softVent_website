@@ -7,12 +7,12 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 const FooterMobileNavMenu = () => {
   return (
-    <nav className="p-2 elem-shadow fixed bottom-0 w-full z-10 bg-[white] xs:px-8 xl:px-14 lg:hidden">
+    <nav className="font-[inter] p-2 elem-shadow fixed bottom-0 w-full z-10 bg-[white] xs:px-8 xl:px-14 lg:hidden">
       <ul className="flex gap-1 justify-between md:justify-center md:gap-16">
         <li className="cursor-pointer">
           <NavLink to="catalog">
-            <div className="flex flex-col gap-1 items-center text-[12px] text-[#6E6E6E] xs:text-[14px]">
-              <HiOutlineViewGrid className="text-[26px]" />
+            <div className="flex flex-col gap-1 items-center text-[12px] text-[#6E6E6E] xs:text-[14px] hover:text-[#1B9AE9] transition duration-200 ease-in">
+              <HiOutlineViewGrid className="text-[26px] opacity-80" />
               <span>Каталог</span>
             </div>
           </NavLink>
@@ -20,18 +20,18 @@ const FooterMobileNavMenu = () => {
         <li className="cursor-pointer">
           <NavLink
             to="whishlist"
-            className="flex flex-col gap-1 items-center text-[12px] text-[#6E6E6E] xs:text-[14px]"
+            className="flex flex-col gap-1 items-center text-[12px] text-[#6E6E6E] xs:text-[14px] hover:text-[#1B9AE9] transition duration-200 ease-in"
           >
-            <PiStarBold className="text-[26px]" />
+            <PiStarBold className="text-[26px] opacity-80" />
             <span>Избранное</span>
           </NavLink>
         </li>
         <li className="cursor-pointer">
           <NavLink
             to="cart"
-            className="flex flex-col gap-1 items-center text-[12px] text-[#6E6E6E] xs:text-[14px]"
+            className="flex flex-col gap-1 items-center text-[12px] text-[#6E6E6E] xs:text-[14px] hover:text-[#1B9AE9] transition duration-200 ease-in"
           >
-            <FiShoppingCart className="text-[26px]" />
+            <FiShoppingCart className="text-[26px] opacity-80" />
             <span>Корзина</span>
           </NavLink>
         </li>

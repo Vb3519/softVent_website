@@ -9,21 +9,21 @@ const ServicesMain = () => {
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
       {/* ----- СОЗДАЙТЕ СЕБЕ КОМФОРТ: ---- */}
-      <div className="relative lg:min-w-[500px]">
+      <div className="font-[inter] relative lg:min-w-[500px]">
         <div className="h-full w-[70%] max-w-[400px] absolute top-0 left-0 rounded-tl-2xl rounded-bl-2xl bg-gray-200 opacity-60 services-layer md:max-w-[450px]"></div>
         <div className="w-[50%] max-w-[400px] flex flex-col absolute left-4 top-4">
-          <span className="text-[12px] font-[500] text-[#6E6E6E] mb-2 xs:text-[14px] sm:text-[18px]">
+          <span className="text-[12px] font-[500] text-[#6E6E6E] mb-1 xs:mb-2 xs:text-[14px] sm:text-[16px] lg:mb-3">
             Настенные кондиционеры
           </span>
-          <p className="text-[18px] text-[#232323] font-[600] leading-6 mb-2 sm:text-[22px]">
+          <p className="text-[16px] text-[#232323] font-[600] leading-6 mb-1 xs:mb-2 sm:text-[22px] lg:mb-3">
             Создайте себе комфорт!
           </p>
-          <p className="mb-1 text-[12px] xs:text-[14px] sm:text-[18px]">
+          <p className="mb-1 text-[12px] leading-[15px] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
             Широкий выбор систем кондиционирования с гарантией от производителя
           </p>
           <NavLink
             to="catalog"
-            className="w-fit h-full mt-2 p-2 text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] xs:mt-6 sm:mt-8 sm:text-[18px] md:min-w-[110px] lg:min-w-[140px]"
+            className="w-fit h-full mt-1 p-2 text-[14px] text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] transition duration-200 ease-in xs:mt-4 sm:mt-8 sm:text-[18px] md:min-w-[110px] lg:min-w-[140px] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)]"
           >
             Каталог
           </NavLink>
@@ -41,13 +41,13 @@ const ServicesMain = () => {
       {/* ----- ВЫЕЗД, ПРОЕКТ и СМЕТА: ---- */}
       {/* ----- ВЫЕЗД, ПРОЕКТ и СМЕТА: ---- */}
       <div className="flex flex-col gap-2 lg:justify-between">
-        <ul className="flex gap-2 xl:flex-col">
+        <ul className="font-[inter] flex gap-2 xl:flex-col">
           <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-gray-200 rounded-2xl elem-shadow xl:min-h-[80px]">
-            <h3 className="text-[14px] font-[500] leading-[14px] z-5 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[14px] z-5 lg:leading-[18px] xl:text-[17px]">
               <span>Выезд инженера на объект - </span>
               <span className="text-[#1b9ae9]">Бесплатно</span>
             </h3>
-            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[15px]">
               Осуществим замеры, обсудим сроки и расскажем о ходе работ
             </p>
             <svg
@@ -66,10 +66,10 @@ const ServicesMain = () => {
             </svg>
           </li>
           <li className="min-h-[105px] relative flex flex-col gap-2 p-3 bg-blue-200 rounded-2xl elem-shadow xl:min-h-[80px]">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[17px]">
               Подготовка проекта и сметы
             </h3>
-            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[15px]">
               Бесплатный подбор и расчет стоимости оборудования, монтажных работ
             </p>
             <svg
@@ -92,13 +92,13 @@ const ServicesMain = () => {
         {/* ----- СЕРВИС, МОНТАЖ СКИДКИ: ---- */}
         {/* ----- СЕРВИС, МОНТАЖ СКИДКИ: ---- */}
         {/* ----- СЕРВИС, МОНТАЖ СКИДКИ: ---- */}
-        <ul className="flex flex-col gap-2 justify-between xs:flex-row lg:flex-col lg:justify-end">
+        <ul className="font-[inter] flex flex-col gap-2 justify-between xs:flex-row lg:flex-col lg:justify-end">
           <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-gray-100 rounded-2xl sm:min-w-[145px] lg:min-h-0 2xl:min-h-[70px] elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[17px]">
               Сервисное обслуживание
             </h3>
 
-            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[15px]">
               Продлим срок работы вашего оборудования
             </p>
             <svg
@@ -122,10 +122,10 @@ const ServicesMain = () => {
             </svg>
           </li>
           <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-blue-200 rounded-2xl lg:min-h-0 2xl:min-h-[70px] elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[17px]">
               Монтаж за 1 день
             </h3>
-            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[15px]">
               Установка и настройка климатической техники от 3-х часов
             </p>
             <svg
@@ -144,10 +144,10 @@ const ServicesMain = () => {
             </svg>
           </li>
           <li className="min-w-[115px] min-h-[105px] flex flex-col relative gap-2 p-3 bg-orange-100 rounded-2xl lg:min-h-0 2xl:min-h-[70px] elem-shadow">
-            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[18px]">
+            <h3 className="text-[14px] font-[500] leading-[12px] z-5 lg:leading-[18px] xl:text-[17px]">
               Ежемесячные скидки
             </h3>
-            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[16px]">
+            <p className="text-[12px] leading-[12px] z-5 xs:text-[14px] lg:leading-[18px] xl:text-[15px]">
               Большой ассортимент оборудования в наличии на складе
             </p>
             <svg

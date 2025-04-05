@@ -7,7 +7,7 @@ import InfoSection from '../../UI/InfoSection';
 const Payment = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
@@ -16,8 +16,8 @@ const Payment = () => {
         </NavLink>
         <span>/ Оплата</span>
       </div>
-      <h2 className="text-left text-[22px] font-[600]">Оплата</h2>
-      <div className="p-4 flex flex-col gap-5 justify-center items-center text-[14px] leading-[20px] bg-[#F5FCFF] elem-shadow sm:text-[16px] lg:text-[18px] lg:leading-[25px] lg:flex-row lg:items-start">
+      <h2 className="font-[inter] text-left text-[22px] font-[600]">Оплата</h2>
+      <div className="p-4 flex flex-col gap-5 justify-center items-center font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px] bg-[#F5FCFF] elem-shadow lg:flex-row lg:items-start">
         <div className="flex flex-col gap-5">
           <p>
             Мы активно работаем как с юридическими, так и с физическими лицами,
@@ -54,7 +54,7 @@ const Payment = () => {
         </div>
       </div>
 
-      <ul className="mt-3 flex flex-col gap-3 text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <ul className="mt-3 flex flex-col gap-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <li className="flex flex-col gap-1">
           <h3 className="font-[600]">Оплата наличными</h3>
           <p>

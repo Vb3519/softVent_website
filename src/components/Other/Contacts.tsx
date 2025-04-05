@@ -8,46 +8,46 @@ import ContactForm from '../UI/ContactForm';
 const Contacts = () => {
   return (
     <InfoSection>
-      <div className="text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+      <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
         <NavLink to="/" className="text-[#1B9AE9]">
           Главная{' '}
         </NavLink>
         <span>/ Контакты</span>
       </div>
-      <h2 className="text-center text-[22px] font-[600]">Наши контакты</h2>
+      <h2 className="font-[inter] text-center text-[22px] font-[600]">
+        Наши контакты
+      </h2>
       <div className="flex flex-col justify-center gap-10 lg:flex-row lg:mt-3 2xl:gap-40 2xl:mt-10">
         <div>
           {/* --- ТЕЛ. / РЕЖИМ РАБОТЫ / АДРЕС / ЭЛ. ПОЧТА: --- */}
-          <ul className="flex flex-col gap-3 py-3 text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
+          <ul className="flex flex-col gap-3 py-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             <li className="flex flex-col gap-1">
               <p className="flex gap-1 text-center text-[#6E6E6E]">
                 Телефоны для связи:{' '}
               </p>
-              <p className="text-[17px] font-[600] text-[#1B9AE9]">
+              <p className="text-[17px] font-[500] text-[#1B9AE9]">
                 +7 (981) 755-47-56
               </p>
             </li>
             <li>
               <p className="text-[#6E6E6E]">Режим работы:</p>
-              <p className="font-[600]">Пн-Пт 10:00-19:00</p>
+              <p className="font-[500]">Пн-Пт 10:00-19:00</p>
             </li>
             <li>
-              <p className="text-[#6E6E6E]">
-                Наш адрес: <span>Показать на карте</span>
-              </p>
-              <p className="font-[600]">
+              <p className="text-[#6E6E6E]">Наш адрес:</p>
+              <p className="font-[500]">
                 г. Санкт-Петербург, пр-т Наставников, 40
               </p>
             </li>
             <li>
               <p className="text-[#6E6E6E]">Или напишите нам:</p>
-              <p className="font-[600]">Vb415@bk.ru</p>
+              <p className="font-[500]">Vb415@bk.ru</p>
             </li>
           </ul>
 
           {/* --- СОЦ. СЕТИ: --- */}
           <ul className="flex gap-3 pt-4 border-t-1 border-t-gray-200">
-            <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer">
+            <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
               <svg
                 width="27"
                 height="16"
@@ -63,7 +63,7 @@ const Contacts = () => {
                 ></path>
               </svg>
             </li>
-            <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#39a150] rounded-[50%] cursor-pointer">
+            <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#39a150] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#39a14fe1] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
               <svg
                 width="22"
                 height="22"
@@ -81,7 +81,7 @@ const Contacts = () => {
                 ></path>
               </svg>
             </li>
-            <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer">
+            <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
               <svg
                 width="22"
                 height="20"

@@ -15,17 +15,17 @@ const SelectionHelpContacts = () => {
       className="pt-4 mb-3 px-3 xs:px-8 xl:px-14 lg:mb-10 2xl:px-[200px]"
       ref={ref}
     >
-      <div className="flex flex-col items-center gap-4 pt-4 pb-8 bg-gradient-to-r from-[#B4E2FF] to-blue-300 rounded-2xl sm:flex-row elem-shadow">
+      <div className="font-[inter] flex flex-col items-center gap-4 pt-4 pb-8 bg-gradient-to-r from-[#B4E2FF] to-blue-300 rounded-2xl sm:flex-row elem-shadow">
         <div className="flex flex-col gap-3 px-4">
           <h3
-            className={`text-[22px] text-[#6E6E6E] 2xl:text-[24px] relative top-[-15px] opacity-0 ${
+            className={`text-[18px] font-[500] text-[#6E6E6E] 2xl:text-[24px] relative top-[-15px] opacity-0 xl:text-[20px] ${
               inView ? 'selection-help-container-animation' : ''
             }`}
           >
             Не можете определиться с выбором?
           </h3>
           <p
-            className={`text-[18px] font-[600] leading-[138%] text-[#232323] 2xl:text-[20px] relative top-[15px] opacity-0 ${
+            className={`text-[17px] font-[500] leading-[138%] text-[#232323] 2xl:text-[19px] relative top-[15px] opacity-0 ${
               inView ? 'selection-help-container-animation' : ''
             }`}
           >
@@ -42,7 +42,7 @@ const SelectionHelpContacts = () => {
               }`}
             >
               <Socials />
-              <p className="mt-3 text-[16px] font-[600] leading-[138%] text-[#232323] 2xl:text-[18px]">
+              <p className="mt-3 text-[16px] font-[500] leading-[138%] text-[#232323] 2xl:text-[18px]">
                 Или просто напишите нам!
               </p>
             </div>
@@ -65,7 +65,7 @@ export const Socials = () => {
   /* СОЦСЕТИ: ВКОНТАКТЕ, ВОТСАП, ТЕЛЕГРАМ */
   return (
     <ul className="gap-3 mt-4 hidden lg:flex">
-      <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#1B9AE9] rounded-[50%]">
+      <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
         <svg
           width="27"
           height="16"
@@ -81,7 +81,7 @@ export const Socials = () => {
           ></path>
         </svg>
       </li>
-      <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#39a150] rounded-[50%]">
+      <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#39a150] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#39a14fe1] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
         <svg
           width="22"
           height="22"
@@ -99,7 +99,7 @@ export const Socials = () => {
           ></path>
         </svg>
       </li>
-      <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#1B9AE9] rounded-[50%]">
+      <li className="w-[40px] h-[40px] flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
         <svg
           width="22"
           height="20"
