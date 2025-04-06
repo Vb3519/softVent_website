@@ -18,6 +18,7 @@ const microClimateData = [
     /* --- Ballu: ---*/
     /* --- Ballu: ---*/
     /* --- Ballu: ---*/
+    isInWhishList: false,
     isInStock: true,
     isPopular: false,
     title: 'Увлажнитель воздуха Ballu 50Вт',
@@ -26,10 +27,11 @@ const microClimateData = [
     maxAirFlow: '400',
     img: ballu_img1,
     color: 'Белый',
-    price: '12 000',
+    price: '12 100',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: false,
     title: 'Увлажнитель воздуха Ballu 70Вт',
@@ -38,10 +40,11 @@ const microClimateData = [
     maxAirFlow: '550',
     img: ballu_img2,
     color: 'Белый',
-    price: '14 000',
+    price: '14 070',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: true,
     title: 'Увлажнитель воздуха Ballu 60Вт',
@@ -50,13 +53,14 @@ const microClimateData = [
     maxAirFlow: '450',
     img: ballu_img3,
     color: 'Белый',
-    price: '13 000',
+    price: '13 400',
     id: uuidv4(),
   },
   /* --- Boneco: ---*/
   /* --- Boneco: ---*/
   /* --- Boneco: ---*/
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: true,
     title: 'Увлажнитель воздуха Boneco 65Вт',
@@ -65,10 +69,11 @@ const microClimateData = [
     maxAirFlow: '650',
     img: boneco_img1,
     color: 'Белый',
-    price: '17 000',
+    price: '17 150',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: true,
     title: 'Увлажнитель воздуха Boneco 45Вт',
@@ -77,10 +82,11 @@ const microClimateData = [
     maxAirFlow: '350',
     img: boneco_img2,
     color: 'Белый',
-    price: '11 000',
+    price: '11 230',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: true,
     title: 'Увлажнитель воздуха Boneco 25Вт',
@@ -89,13 +95,14 @@ const microClimateData = [
     maxAirFlow: '150',
     img: boneco_img3,
     color: 'Черный',
-    price: '7 000',
+    price: '7 100',
     id: uuidv4(),
   },
   /* --- Zanussi: ---*/
   /* --- Zanussi: ---*/
   /* --- Zanussi: ---*/
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: false,
     title: 'Увлажнитель воздуха Zanussi 45Вт',
@@ -104,10 +111,11 @@ const microClimateData = [
     maxAirFlow: '250',
     img: zanussi_img1,
     color: 'Белый',
-    price: '11 000',
+    price: '11 450',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: false,
     title: 'Увлажнитель воздуха Zanussi 65Вт',
@@ -116,10 +124,11 @@ const microClimateData = [
     maxAirFlow: '450',
     img: zanussi_img2,
     color: 'Черный',
-    price: '16 000',
+    price: '16 720',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: true,
     title: 'Увлажнитель воздуха Zanussi 75Вт',
@@ -128,10 +137,11 @@ const microClimateData = [
     maxAirFlow: '650',
     img: zanussi_img3,
     color: 'Черный',
-    price: '22 000',
+    price: '22 130',
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: false,
     title: 'Увлажнитель воздуха Zanussi 45Вт',
@@ -140,7 +150,7 @@ const microClimateData = [
     maxAirFlow: '350',
     img: zanussi_img4,
     color: 'Белый',
-    price: '14 000',
+    price: '14 800',
     id: uuidv4(),
   },
 ];

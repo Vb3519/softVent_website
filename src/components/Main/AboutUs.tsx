@@ -24,7 +24,7 @@ const AboutUs = () => {
               учитывая все особенности вашего объекта и требования к климату.
             </p>
             <NavLink
-              className="mt-4 h-[54px] w-[60%] max-w-[255px] flex items-center justify-center text-[16px] leading-[20px] font-[600] text-[#1B9AE9] border-1 border-blue-300 rounded-2xl transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.1)] lg:hover:bg-[white]"
+              className="mt-4 h-[54px] w-[60%] max-w-[255px] flex items-center justify-center text-[16px] leading-[20px] font-[600] text-[#1B9AE9] border-1 border-blue-300 rounded-2xl transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] hover:bg-[#1B9AE9] hover:text-[white] hover:border-transparent"
               to="about"
             >
               Подробнее о нас

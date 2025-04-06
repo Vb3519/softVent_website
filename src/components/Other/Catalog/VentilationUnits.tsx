@@ -7,6 +7,8 @@ import InfoSection from '../../UI/InfoSection';
 
 import hvacUnitsData from '../../../data/hvacUnitsData';
 
+import ProductCard from '../../UI/ProductCard';
+
 const VentilationUnits = () => {
   return (
     <InfoSection>
@@ -106,76 +108,20 @@ const VentilationUnits = () => {
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
           {hvacUnitsData.map((hvacUnitInfo) => {
             return (
-              <div className="font-[inter] max-w-[650px] p-4 border-1 border-gray-300 rounded-2xl xs:flex">
-                <div className="xs:pr-1 xs:border-r-1 xs:border-r-gray-300">
-                  <div className="flex align-center justify-between gap-1">
-                    <p
-                      className={`text-[18px] font-[600] ${
-                        hvacUnitInfo.isPopular ? '' : 'hidden'
-                      }`}
-                    >
-                      Товар месяца!
-                    </p>
-                    <CiStar className="ml-auto text-[26px] text-[#6E6E6E] cursor-pointer" />
-                  </div>
-                  <div className="flex gap-2 pt-2">
-                    <p
-                      className={`h-6 flex items-center rounded-sm border-1 border-[#3BBA00] text-[11px] leading-1 text-[#3BBA00] px-1 ${
-                        hvacUnitInfo.isInStock ? '' : 'hidden'
-                      }`}
-                    >
-                      В наличии
-                    </p>
-                    <p
-                      className={`min-h-[24px] uppercase flex items-center rounded-sm text-[11px] leading-1 px-2 bg-[#FF6341] text-[white] ${
-                        hvacUnitInfo.isPopular ? '' : 'hidden'
-                      }`}
-                    >
-                      Хит
-                    </p>
-                  </div>
-                  <div className="xs:w-fit">
-                    <img className="max-h-[500px]" src={hvacUnitInfo.img}></img>
-                  </div>
-                </div>
-                <div className="flex flex-col xs:items-end xs:justify-between xs:pl-4 sm:justify-center lg:pr-4 lg:justify-start lg:items-start">
-                  <h4 className="font-[600] text-center mt-2 mb-2 xs:leading-[20px] xs:mt-0 sm:text-[18px]">
-                    {hvacUnitInfo.title}
-                  </h4>
-                  <ul className="flex flex-col gap-2">
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Тип нагревателя:{' '}
-                      <span className="text-[#6E6E6E] font-[700]">
-                        {hvacUnitInfo.heater}
-                      </span>
-                    </li>
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Макс. мощность:{' '}
-                      <span className="text-[#6E6E6E] font-[700]">
-                        {hvacUnitInfo.maxPower} кВт
-                      </span>
-                    </li>
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Макс. расход воздуха:{' '}
-                      <span className="text-[#6E6E6E] font-[700] text-nowrap">
-                        {hvacUnitInfo.maxAirFlow} м3/ч
-                      </span>
-                    </li>
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Рекуператор:{' '}
-                      <span className="text-[#6E6E6E] font-[700]">
-                        {hvacUnitInfo.recup}
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="text-[20px] font-[600] text-nowrap mt-2 mb-2 sm:text-[24px] lg:text-[35px]">
-                    {hvacUnitInfo.price} ₽
-                  </div>
-                  <button className="min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)]">
-                    В корзину <CiShoppingCart className="text-[25px]" />
-                  </button>
-                </div>
-              </div>
+              <ProductCard
+                key={hvacUnitInfo.id}
+                heater={hvacUnitInfo.heater}
+                recup={hvacUnitInfo.recup}
+                isInWhishList={hvacUnitInfo.isInWhishList}
+                isInStock={hvacUnitInfo.isInStock}
+                isPopular={hvacUnitInfo.isPopular}
+                title={hvacUnitInfo.title}
+                maxPower={hvacUnitInfo.maxPower}
+                maxAirFlow={hvacUnitInfo.maxAirFlow}
+                img={hvacUnitInfo.img}
+                price={hvacUnitInfo.price}
+                id={hvacUnitInfo.id}
+              />
             );
           })}
         </div>

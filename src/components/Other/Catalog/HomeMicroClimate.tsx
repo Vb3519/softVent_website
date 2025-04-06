@@ -118,7 +118,10 @@ const HomeMicroClimate = () => {
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
           {microClimateData.map((microClimateUnitInfo) => {
             return (
-              <div className="font-[inter] max-w-[650px] p-4 border-1 border-gray-300 rounded-2xl xs:flex xl:h-[470px]">
+              <div
+                className="font-[inter] max-w-[650px] p-4 border-1 border-gray-300 rounded-2xl xs:flex xl:h-[470px]"
+                key={microClimateUnitInfo.id}
+              >
                 <div className="xs:pr-1 xs:border-r-1 xs:border-r-gray-300">
                   <div className="flex align-center justify-between gap-1">
                     <p
@@ -128,7 +131,7 @@ const HomeMicroClimate = () => {
                     >
                       Товар месяца!
                     </p>
-                    <CiStar className="ml-auto text-[26px] text-[#6E6E6E] cursor-pointer" />
+                    <CiStar className="ml-auto text-[30px] text-[#6E6E6E] cursor-pointer transition duration-200 ease-in hover:text-[#1B9AE9]" />
                   </div>
                   <div className="flex gap-2 pt-2">
                     <p

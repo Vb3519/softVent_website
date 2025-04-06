@@ -13,12 +13,15 @@ import {
   toggleMobileMenu,
 } from '../../../redux/slices/mobileMenuSlice';
 
+import { selectCurrentWhishList } from '../../../redux/slices/whishListSlice';
+
 /* ------------ ХЕАДЕР: ВТОРОЙ РЯД ---------------- */
 const HeaderRowTwo = () => {
   const dispatch = useDispatch();
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const isMobileMenuOpened: boolean = useSelector(selectMobileMenuState);
+  const currentWhishList = useSelector(selectCurrentWhishList);
 
   // "Прилипание" меню навигации при скролле:
   const handlePageScoll = () => {
@@ -149,7 +152,7 @@ const HeaderRowTwo = () => {
             </NavLink>
           </li>
 
-          <li className="flex flex-col items-center">
+          <li className="flex flex-col items-center relative">
             <NavLink
               to="whishlist"
               className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px] hover:text-[#1B9AE9] transition duration-200 ease-in"
@@ -157,8 +160,11 @@ const HeaderRowTwo = () => {
               <PiStarBold className="text-[26px] opacity-80" />
               <span className="font-[inter]">Избранное</span>
             </NavLink>
+            <span className="font-[inter] text-[white] pr-[1px] text-[15px] top-[-7px] left-[37px] flex items-center justify-center absolute w-[20px] h-[20px] rounded-[50%] bg-gradient-to-r from-blue-400 to-blue-500">
+              {currentWhishList.length}
+            </span>
           </li>
-          <li className="flex flex-col items-center">
+          <li className="flex flex-col items-center relative">
             <NavLink
               to="cart"
               className="flex flex-col items-center text-[12px] text-[#6E6E6E] xs:text-[14px] 2xl:text-[15px] hover:text-[#1B9AE9] transition duration-200 ease-in"
@@ -166,6 +172,9 @@ const HeaderRowTwo = () => {
               <FiShoppingCart className="text-[26px] opacity-80" />
               <span className="font-[inter]">Корзина</span>
             </NavLink>
+            <span className="font-[inter] text-[white] text-[15px] top-[-7px] left-[30px] flex items-center justify-center absolute w-[20px] h-[20px] rounded-[50%] bg-gradient-to-r from-blue-400 to-blue-500">
+              0
+            </span>
           </li>
         </ul>
       </div>

@@ -18,6 +18,7 @@ const splitSystemsData = [
     /* --- Ballu: ---*/
     /* --- Ballu: ---*/
     /* --- Ballu: ---*/
+    isInWhishList: false,
     isInStock: false,
     isPopular: false,
     title: 'Сплит-система Ballu 1кВт',
@@ -30,6 +31,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: false,
     title: 'Сплит-система Ballu 1.5кВт',
@@ -42,6 +44,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: true,
     title: 'Сплит-система Ballu 2кВт',
@@ -57,6 +60,7 @@ const splitSystemsData = [
   /* --- Electrolux: ---*/
   /* --- Electrolux: ---*/
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: false,
     title: 'Сплит-система Electrolux 0.5кВт',
@@ -69,6 +73,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: true,
     title: 'Сплит-система Electrolux 1кВт',
@@ -81,6 +86,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: true,
     title: 'Сплит-система Electrolux 2.5кВт',
@@ -96,6 +102,7 @@ const splitSystemsData = [
   /* --- Zanussi: ---*/
   /* --- Zanussi: ---*/
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: true,
     title: 'Сплит-система Zanussi 2кВт',
@@ -108,6 +115,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: true,
     isPopular: false,
     title: 'Сплит-система Zanussi 1.5кВт',
@@ -120,6 +128,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: false,
     title: 'Сплит-система Zanussi 3кВт',
@@ -132,6 +141,7 @@ const splitSystemsData = [
     id: uuidv4(),
   },
   {
+    isInWhishList: false,
     isInStock: false,
     isPopular: false,
     title: 'Сплит-система Zanussi 2кВт',

@@ -25,6 +25,6 @@ export const { toggleMobileMenu } = mobileMenuSlice.actions;
 
 // Состояние:
 export const selectMobileMenuState = (state: mobileMenuState) =>
-  state.mobileMenu.isMobileMenuOpened;
+  state.mobileMenu.isMobileMenuOpened; // mobileMenu - имя редьюсера в store
 
 export default mobileMenuSlice.reducer;

@@ -207,7 +207,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="font-[inter] pt-3 pb-14 flex flex-col gap-3 border-t-1 border-t-[rgba(114,114,114,0.2)] text-[12px] leading-[14px] text-[#232323] sm:text-[14px] lg:pb-0 lg:flex-row lg:items-center">
+      <div className="font-[inter] pt-3 pb-16 flex flex-col gap-3 border-t-1 border-t-[rgba(114,114,114,0.2)] text-[12px] leading-[14px] text-[#232323] sm:text-[14px] lg:pb-0 lg:flex-row lg:items-center">
         <p>
           2025 © Интернет-магазин систем кондиционирования, вентиляции и
           отопления. Все права защищены.
