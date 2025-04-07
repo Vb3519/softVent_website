@@ -20,6 +20,12 @@ import {
   turnOffWhishListLabel,
 } from '../../redux/slices/allProductsSlice';
 
+import {
+  selectCurrentShoppingCart,
+  addProductToShoppingCart,
+  removeProductFromShoppingCart,
+} from '../../redux/slices/shoppingCartSlice';
+
 export interface ProductCard_Type {
   // ИНДИВИДУАЛЬНЫЕ ХАРАКТЕРИСТИКИ (в зависимости от типа изделия):
   area?: string; // увлажнители воздуха
@@ -47,6 +53,8 @@ const ProductCard: React.FC<ProductCard_Type> = (
   const dispatch = useDispatch();
   const currentWhishList = useSelector(selectCurrentWhishList);
   const currentCategory = useSelector(selectCurrentCategory);
+
+  const currentShoppingCart = useSelector(selectCurrentShoppingCart);
 
   // подсветка баджа "избранное" карточки товара:
   // --------------
@@ -218,7 +226,20 @@ const ProductCard: React.FC<ProductCard_Type> = (
         <div className="text-[20px] font-[600] text-nowrap mt-2 mb-2 sm:text-[24px] lg:text-[35px]">
           {productInfo.price} ₽
         </div>
-        <button className="min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] xl:mt-9 hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)]">
+        <button
+          className="min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] xl:mt-9 hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)]"
+          onClick={() => {
+            const alrdyInCart: boolean = currentShoppingCart.some(
+              (cartItem) => cartItem.id === productInfo.id
+            );
+
+            if (alrdyInCart) return;
+
+            if (currentShoppingCart.length < 4) {
+              dispatch(addProductToShoppingCart(productInfo));
+            }
+          }}
+        >
           В корзину <CiShoppingCart className="text-[25px]" />
         </button>
       </div>

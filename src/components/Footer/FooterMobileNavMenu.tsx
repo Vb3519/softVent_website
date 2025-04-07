@@ -7,9 +7,11 @@ import { PiStarBold } from 'react-icons/pi';
 import { FiShoppingCart } from 'react-icons/fi';
 
 import { selectCurrentWhishList } from '../../redux/slices/whishListSlice';
+import { selectCurrentShoppingCart } from '../../redux/slices/shoppingCartSlice';
 
 const FooterMobileNavMenu = () => {
   const currentWhishList = useSelector(selectCurrentWhishList);
+  const currentShoppingCart = useSelector(selectCurrentShoppingCart);
 
   return (
     <nav className="font-[inter] p-3 elem-shadow fixed bottom-0 w-full z-10 bg-[white] xs:px-8 xl:px-14 lg:hidden">
@@ -42,7 +44,7 @@ const FooterMobileNavMenu = () => {
             <FiShoppingCart className="text-[26px] opacity-80" />
             <span>Корзина</span>
             <span className="font-[inter] text-[white] text-[15px] top-[-7px] left-[30px] flex items-center justify-center absolute w-[20px] h-[20px] rounded-[50%] bg-gradient-to-r from-blue-400 to-blue-500">
-              0
+              {currentShoppingCart.length}
             </span>
           </NavLink>
         </li>

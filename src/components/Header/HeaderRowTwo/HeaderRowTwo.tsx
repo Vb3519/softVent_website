@@ -15,6 +15,8 @@ import {
 
 import { selectCurrentWhishList } from '../../../redux/slices/whishListSlice';
 
+import { selectCurrentShoppingCart } from '../../../redux/slices/shoppingCartSlice';
+
 /* ------------ ХЕАДЕР: ВТОРОЙ РЯД ---------------- */
 const HeaderRowTwo = () => {
   const dispatch = useDispatch();
@@ -22,6 +24,7 @@ const HeaderRowTwo = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const isMobileMenuOpened: boolean = useSelector(selectMobileMenuState);
   const currentWhishList = useSelector(selectCurrentWhishList);
+  const currentShoppingCart = useSelector(selectCurrentShoppingCart);
 
   // "Прилипание" меню навигации при скролле:
   const handlePageScoll = () => {
@@ -173,7 +176,7 @@ const HeaderRowTwo = () => {
               <span className="font-[inter]">Корзина</span>
             </NavLink>
             <span className="font-[inter] text-[white] text-[15px] top-[-7px] left-[30px] flex items-center justify-center absolute w-[20px] h-[20px] rounded-[50%] bg-gradient-to-r from-blue-400 to-blue-500">
-              0
+              {currentShoppingCart.length}
             </span>
           </li>
         </ul>
