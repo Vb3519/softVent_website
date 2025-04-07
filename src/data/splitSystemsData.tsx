@@ -29,6 +29,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '25 000',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -42,6 +43,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '30 000',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -55,6 +57,7 @@ const splitSystemsData = [
     color: 'Черный',
     price: '35 000',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   /* --- Electrolux: ---*/
   /* --- Electrolux: ---*/
@@ -71,6 +74,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '24 500',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -84,6 +88,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '26 300',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -97,6 +102,7 @@ const splitSystemsData = [
     color: 'Черный',
     price: '30 300',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   /* --- Zanussi: ---*/
   /* --- Zanussi: ---*/
@@ -113,6 +119,7 @@ const splitSystemsData = [
     color: 'Черный',
     price: '34 200',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -126,6 +133,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '28 200',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -139,6 +147,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '24 200',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
   {
     isInWhishList: false,
@@ -152,6 +161,7 @@ const splitSystemsData = [
     color: 'Белый',
     price: '35 800',
     id: uuidv4(),
+    category: 'splitSystemsData',
   },
 ];
 

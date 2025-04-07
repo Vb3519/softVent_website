@@ -1,20 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 // UI:
 import InfoSection from '../../UI/InfoSection';
 import ProductCard from '../../UI/ProductCard';
 
 // СЛАЙСЫ:
-import { selectSplitSystems } from '../../../redux/slices/splitSystemsSlice';
+import {
+  selectSplitSystems,
+  setCurrentCategory,
+} from '../../../redux/slices/allProductsSlice';
 
 // ТИПЫ:
 import { ProductCard_Type } from '../../UI/ProductCard';
 
 const SplitSystems = () => {
+  const dispatch = useDispatch();
+
+  const currentLocation = useLocation();
+
   const currentSplitSystemsData: ProductCard_Type[] =
     useSelector(selectSplitSystems);
+
+  // Выбор категории оборудования (при монтировании компонента):
+  useEffect(() => {
+    if (currentLocation.pathname.includes('split-systems')) {
+      dispatch(setCurrentCategory('splitSystemsData'));
+    }
+  }, []);
 
   return (
     <InfoSection>
@@ -126,6 +140,7 @@ const SplitSystems = () => {
                 recup={splitSystemInfo.recup}
                 color={splitSystemInfo.color}
                 // -----
+                category={splitSystemInfo.category}
                 key={splitSystemInfo.id}
                 isInWhishList={splitSystemInfo.isInWhishList}
                 isInStock={splitSystemInfo.isInStock}

@@ -6,15 +6,19 @@ import { CiShoppingCart } from 'react-icons/ci';
 import { PiStarBold } from 'react-icons/pi';
 import { PiStarFill } from 'react-icons/pi';
 
-import {
-  turnOnWhishListLabel,
-  turnOffWhishListLabel,
-} from '../../redux/slices/splitSystemsSlice';
+// CЛАЙСЫ:
 import {
   addProductCardToWhishList,
   removeProductCardFromWhishList,
   selectCurrentWhishList,
 } from '../../redux/slices/whishListSlice';
+
+import {
+  setCurrentCategory,
+  selectCurrentCategory,
+  turnOnWhishListLabel,
+  turnOffWhishListLabel,
+} from '../../redux/slices/allProductsSlice';
 
 export interface ProductCard_Type {
   // ИНДИВИДУАЛЬНЫЕ ХАРАКТЕРИСТИКИ (в зависимости от типа изделия):
@@ -25,6 +29,7 @@ export interface ProductCard_Type {
   color?: string; // увлажнители воздуха и сплит-системы
   // -----
 
+  category: string;
   isInWhishList: boolean;
   isInStock: boolean;
   isPopular: boolean;
@@ -40,8 +45,8 @@ const ProductCard: React.FC<ProductCard_Type> = (
   productInfo: ProductCard_Type
 ) => {
   const dispatch = useDispatch();
-
   const currentWhishList = useSelector(selectCurrentWhishList);
+  const currentCategory = useSelector(selectCurrentCategory);
 
   // подсветка баджа "избранное" карточки товара:
   // --------------
@@ -82,20 +87,26 @@ const ProductCard: React.FC<ProductCard_Type> = (
           <span
             className="ml-auto"
             onClick={() => {
-              if (currentWhishList.length < 4 && !productInfo.isInWhishList) {
+              // Возможность удаления карточек товаров из разных категорий из "избранного":
+              if (currentCategory !== productInfo.category) {
+                dispatch(setCurrentCategory(productInfo.category));
+              }
+
+              const isAlreadyInWishList = currentWhishList.some(
+                (productCard) => productCard.id === productInfo.id
+              );
+
+              if (isAlreadyInWishList) {
+                // Если продукт уже в списке - убираю его:
+                handleTurnOffWhishListLabel(productInfo.id);
+                handleRemoveProductCardFromWhishList(productInfo.id);
+              } else if (currentWhishList.length < 4) {
+                // Если в списке меньше 4 товаров и продукт еще не добавлен
                 handleTurnOnWhishListLabel(productInfo.id);
                 handleAddProductCardToWhishList({
                   ...productInfo,
                   isInWhishList: true,
                 });
-              } else {
-                const isAlrdyInWishList: boolean = currentWhishList.some(
-                  (item) => item.id === productInfo.id
-                );
-                if (isAlrdyInWishList) {
-                  handleTurnOffWhishListLabel(productInfo.id);
-                  handleRemoveProductCardFromWhishList(productInfo.id);
-                }
               }
             }}
           >
@@ -173,7 +184,7 @@ const ProductCard: React.FC<ProductCard_Type> = (
           <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
             Макс. мощность:{' '}
             <span className="text-[#6E6E6E] font-[700] text-nowrap">
-              {productInfo.maxPower} кВт
+              {productInfo.maxPower} {productInfo.area ? 'Вт' : 'кВт'}
             </span>
           </li>
           <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">

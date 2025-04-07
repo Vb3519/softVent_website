@@ -1,14 +1,34 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { CiShoppingCart } from 'react-icons/ci';
-import { CiStar } from 'react-icons/ci';
-
+// UI:
 import InfoSection from '../../UI/InfoSection';
+import ProductCard from '../../UI/ProductCard';
 
-import microClimateData from '../../../data/microClimateData';
+// СЛАЙСЫ:
+import {
+  setCurrentCategory,
+  selectMicroClimate,
+} from '../../../redux/slices/allProductsSlice';
+
+// ТИПЫ:
+import { ProductCard_Type } from '../../UI/ProductCard';
 
 const HomeMicroClimate = () => {
+  const dispatch = useDispatch();
+  const currentLocation = useLocation();
+
+  const currentMicroClimateData: ProductCard_Type[] =
+    useSelector(selectMicroClimate);
+
+  // Выбор категории оборудования (при монтировании компонента):
+  useEffect(() => {
+    if (currentLocation.pathname.includes('home-microclimate')) {
+      dispatch(setCurrentCategory('microClimateData'));
+    }
+  }, []);
+
   return (
     <InfoSection>
       <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
@@ -116,84 +136,23 @@ const HomeMicroClimate = () => {
         </form>
 
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
-          {microClimateData.map((microClimateUnitInfo) => {
+          {currentMicroClimateData.map((microClimateUnitInfo) => {
             return (
-              <div
-                className="font-[inter] max-w-[650px] p-4 border-1 border-gray-300 rounded-2xl xs:flex xl:h-[470px]"
+              <ProductCard
+                category={microClimateUnitInfo.category}
+                area={microClimateUnitInfo.area}
+                color={microClimateUnitInfo.color}
                 key={microClimateUnitInfo.id}
-              >
-                <div className="xs:pr-1 xs:border-r-1 xs:border-r-gray-300">
-                  <div className="flex align-center justify-between gap-1">
-                    <p
-                      className={`text-[18px] font-[600] ${
-                        microClimateUnitInfo.isPopular ? '' : 'hidden'
-                      }`}
-                    >
-                      Товар месяца!
-                    </p>
-                    <CiStar className="ml-auto text-[30px] text-[#6E6E6E] cursor-pointer transition duration-200 ease-in hover:text-[#1B9AE9]" />
-                  </div>
-                  <div className="flex gap-2 pt-2">
-                    <p
-                      className={`h-6 flex items-center rounded-sm border-1 border-[#3BBA00] text-[11px] leading-1 text-[#3BBA00] px-1 ${
-                        microClimateUnitInfo.isInStock ? '' : 'hidden'
-                      }`}
-                    >
-                      В наличии
-                    </p>
-                    <p
-                      className={`min-h-[24px] uppercase flex items-center rounded-sm text-[11px] leading-1 px-2 bg-[#FF6341] text-[white] ${
-                        microClimateUnitInfo.isPopular ? '' : 'hidden'
-                      }`}
-                    >
-                      Хит
-                    </p>
-                  </div>
-                  <div className="xs:w-fit">
-                    <img
-                      className="max-h-[500px]"
-                      src={microClimateUnitInfo.img}
-                    ></img>
-                  </div>
-                </div>
-                <div className="flex flex-col xs:items-end xs:justify-between xs:pl-4 sm:justify-center lg:pr-4 lg:justify-start lg:items-start">
-                  <h4 className="font-[600] text-center mt-2 mb-2 xs:leading-[20px] xs:mt-0 sm:text-[18px]">
-                    {microClimateUnitInfo.title}
-                  </h4>
-                  <ul className="flex flex-col gap-2">
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Эффективная площадь:{' '}
-                      <span className="text-[#6E6E6E] font-[700]">
-                        {microClimateUnitInfo.area} м2
-                      </span>
-                    </li>
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Макс. мощность:{' '}
-                      <span className="text-[#6E6E6E] font-[700] text-nowrap">
-                        {microClimateUnitInfo.maxPower} Вт
-                      </span>
-                    </li>
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Макс. расход воздуха:{' '}
-                      <span className="text-[#6E6E6E] font-[700]">
-                        {microClimateUnitInfo.maxAirFlow} м3/ч
-                      </span>
-                    </li>
-                    <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-                      Цвет:{' '}
-                      <span className="text-[#6E6E6E] font-[700]">
-                        {microClimateUnitInfo.color}
-                      </span>
-                    </li>
-                  </ul>
-                  <div className="text-[20px] font-[600] text-nowrap mt-2 mb-2 sm:text-[24px] lg:text-[35px]">
-                    {microClimateUnitInfo.price} ₽
-                  </div>
-                  <button className="min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] xl:mt-9 hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)]">
-                    В корзину <CiShoppingCart className="text-[25px]" />
-                  </button>
-                </div>
-              </div>
+                isInWhishList={microClimateUnitInfo.isInWhishList}
+                isInStock={microClimateUnitInfo.isInStock}
+                isPopular={microClimateUnitInfo.isPopular}
+                maxPower={microClimateUnitInfo.maxPower}
+                maxAirFlow={microClimateUnitInfo.maxAirFlow}
+                title={microClimateUnitInfo.title}
+                img={microClimateUnitInfo.img}
+                price={microClimateUnitInfo.price}
+                id={microClimateUnitInfo.id}
+              />
             );
           })}
         </div>

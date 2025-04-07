@@ -1,27 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { ProductCard_Type } from '../../components/UI/ProductCard';
+
 interface WhishListState_Type {
   whishList: ProductCard_Type[];
-}
-
-interface ProductCard_Type {
-  // ИНДИВИДУАЛЬНЫЕ ХАРАКТЕРИСТИКИ (в зависимости от типа изделия):
-  area?: string; // увлажнители воздуха
-  invertor?: string; // сплит-системы
-  heater?: string; // вент-установки
-  recup?: string; // вент-установки
-  color?: string; // увлажнители воздуха и сплит-системы
-  // -----
-
-  isInWhishList: boolean;
-  isInStock: boolean;
-  isPopular: boolean;
-  title: string;
-  maxPower: string;
-  maxAirFlow: string;
-  img: string;
-  price: string;
-  id: string;
 }
 
 const initialState: ProductCard_Type[] = [];

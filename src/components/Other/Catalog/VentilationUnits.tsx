@@ -1,15 +1,36 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { CiShoppingCart } from 'react-icons/ci';
 import { CiStar } from 'react-icons/ci';
 
+// UI:
 import InfoSection from '../../UI/InfoSection';
-
-import hvacUnitsData from '../../../data/hvacUnitsData';
-
 import ProductCard from '../../UI/ProductCard';
 
+// СЛАЙСЫ:
+import {
+  selectHvacUnits,
+  setCurrentCategory,
+} from '../../../redux/slices/allProductsSlice';
+
+// ТИПЫ:
+import { ProductCard_Type } from '../../UI/ProductCard';
+
 const VentilationUnits = () => {
+  const dispatch = useDispatch();
+
+  const currentLocation = useLocation();
+
+  const currentHvacUnitsData: ProductCard_Type[] = useSelector(selectHvacUnits);
+
+  // Выбор категории оборудования (при монтировании компонента):
+  useEffect(() => {
+    if (currentLocation.pathname.includes('ventilation-units')) {
+      dispatch(setCurrentCategory('hvacUnitsData'));
+    }
+  }, []);
+
   return (
     <InfoSection>
       <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
@@ -106,9 +127,10 @@ const VentilationUnits = () => {
         </form>
 
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
-          {hvacUnitsData.map((hvacUnitInfo) => {
+          {currentHvacUnitsData.map((hvacUnitInfo) => {
             return (
               <ProductCard
+                category={hvacUnitInfo.category}
                 key={hvacUnitInfo.id}
                 heater={hvacUnitInfo.heater}
                 recup={hvacUnitInfo.recup}

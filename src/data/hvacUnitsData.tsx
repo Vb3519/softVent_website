@@ -25,6 +25,7 @@ const hvacUnitsData = [
     recup: 'Да',
     price: '195 300',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -38,6 +39,7 @@ const hvacUnitsData = [
     recup: 'Да',
     price: '237 450',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -51,6 +53,7 @@ const hvacUnitsData = [
     recup: 'Да',
     price: '249 130',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -64,6 +67,7 @@ const hvacUnitsData = [
     recup: 'Да',
     price: '275 000',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -77,6 +81,7 @@ const hvacUnitsData = [
     recup: 'Да',
     price: '289 750',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   // без рекуператора (от малой мощности к большой):
   {
@@ -91,6 +96,7 @@ const hvacUnitsData = [
     recup: 'Нет',
     price: '126 175',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -104,6 +110,7 @@ const hvacUnitsData = [
     recup: 'Нет',
     price: '142 100',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -117,6 +124,7 @@ const hvacUnitsData = [
     recup: 'Нет',
     price: '138 050',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -130,6 +138,7 @@ const hvacUnitsData = [
     recup: 'Нет',
     price: '165 200',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
   {
     isInWhishList: false,
@@ -143,6 +152,7 @@ const hvacUnitsData = [
     recup: 'Нет',
     price: '171 400',
     id: uuidv4(),
+    category: 'hvacUnitsData',
   },
 ];
 

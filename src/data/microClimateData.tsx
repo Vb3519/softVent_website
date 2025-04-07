@@ -29,6 +29,7 @@ const microClimateData = [
     color: 'Белый',
     price: '12 100',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -42,6 +43,7 @@ const microClimateData = [
     color: 'Белый',
     price: '14 070',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -55,6 +57,7 @@ const microClimateData = [
     color: 'Белый',
     price: '13 400',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   /* --- Boneco: ---*/
   /* --- Boneco: ---*/
@@ -71,6 +74,7 @@ const microClimateData = [
     color: 'Белый',
     price: '17 150',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -84,6 +88,7 @@ const microClimateData = [
     color: 'Белый',
     price: '11 230',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -97,6 +102,7 @@ const microClimateData = [
     color: 'Черный',
     price: '7 100',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   /* --- Zanussi: ---*/
   /* --- Zanussi: ---*/
@@ -113,6 +119,7 @@ const microClimateData = [
     color: 'Белый',
     price: '11 450',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -126,6 +133,7 @@ const microClimateData = [
     color: 'Черный',
     price: '16 720',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -139,6 +147,7 @@ const microClimateData = [
     color: 'Черный',
     price: '22 130',
     id: uuidv4(),
+    category: 'microClimateData',
   },
   {
     isInWhishList: false,
@@ -152,6 +161,7 @@ const microClimateData = [
     color: 'Белый',
     price: '14 800',
     id: uuidv4(),
+    category: 'microClimateData',
   },
 ];
 
