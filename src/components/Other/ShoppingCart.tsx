@@ -228,7 +228,7 @@ const ShoppingCartProductCard: React.FC<ShoppingCartProductCard_Type> = (
           {productInfo.price} ₽
         </div>
         <button
-          className={`min-w-[125px] mt-3 flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] xl:mt-9 hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] ${
+          className={`min-w-[125px] mt-3 text-[14px] flex items-center justify-center text-nowrap gap-2 p-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] cursor-pointer transition duration-200 ease-in lg:w-[100%] lg:p-3 lg:text-[18px] xl:mt-9 hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] ${
             isInCart ? 'bg-gradient-to-r from-gray-400 to-gray-500' : ''
           }`}
           onClick={() => {
@@ -236,7 +236,7 @@ const ShoppingCartProductCard: React.FC<ShoppingCartProductCard_Type> = (
           }}
         >
           Убрать из корзины
-          <FaTrashAlt className="text-[18px]" />
+          <FaTrashAlt className="text-[14px] lg:text-[18px]" />
         </button>
       </div>
     </div>

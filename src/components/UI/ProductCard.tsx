@@ -29,7 +29,7 @@ import {
 export interface ProductCard_Type {
   // ИНДИВИДУАЛЬНЫЕ ХАРАКТЕРИСТИКИ (в зависимости от типа изделия):
   area?: string; // увлажнители воздуха
-  invertor?: string; // сплит-системы
+  invertor?: boolean; // сплит-системы
   heater?: string; // вент-установки
   recup?: string; // вент-установки
   color?: string; // увлажнители воздуха и сплит-системы
@@ -159,12 +159,13 @@ const ProductCard: React.FC<ProductCard_Type> = (
           {productInfo.invertor ? (
             <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
               Инверторная технология:{' '}
-              <span className="text-[#6E6E6E] font-[700]">
-                ({productInfo.invertor})
-              </span>
+              <span className="text-[#6E6E6E] font-[700]">Да</span>
             </li>
           ) : (
-            ''
+            <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
+              Инверторная технология:{' '}
+              <span className="text-[#6E6E6E] font-[700]">Нет</span>
+            </li>
           )}
 
           {productInfo.area ? (

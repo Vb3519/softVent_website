@@ -12,6 +12,26 @@ import {
   setCurrentCategory,
 } from '../../../redux/slices/allProductsSlice';
 
+import {
+  // Действия:
+  setDeveloper,
+  setMinPrice,
+  setMaxPrice,
+  setStatus,
+  setInvertor,
+  setColor,
+  setOnlyFavourite,
+  resetFilters,
+  // Селекторы:
+  selectSplitSystemsFilter,
+  selectDevelopers,
+  selectPrices,
+  selectProductStatus,
+  selectInvertorControl,
+  selectColors,
+  selectOnlyFavouriteOption,
+} from '../../../redux/slices/splitSystemsFilterSlice';
+
 // ТИПЫ:
 import { ProductCard_Type } from '../../UI/ProductCard';
 
@@ -29,6 +49,155 @@ const SplitSystems = () => {
       dispatch(setCurrentCategory('splitSystemsData'));
     }
   }, []);
+
+  //---------------------------------------
+  // ФИЛЬТРЫ:
+  //---------------------------------------
+  const currentSplitSystemsFilter = useSelector(selectSplitSystemsFilter); // весь фильтр для сплит-систем
+  const currentDevelopersFilterList = useSelector(selectDevelopers); // Производители
+  const currentMinAndMaxPriceValue = useSelector(selectPrices);
+  const currentProductStatus = useSelector(selectProductStatus); // Оборудование в наличии / под заказ
+  const currentInvertorControlStatus = useSelector(selectInvertorControl); // Инверторное управление
+  const currentColor = useSelector(selectColors); // цвет корпуса
+  const currentOnlyFavouriteOption = useSelector(selectOnlyFavouriteOption); // опция только "избранное"
+
+  // Выбор производителя:
+  const handleDeveloperChange = (developer: string) => {
+    const devPayload = {
+      developer: developer,
+    };
+    dispatch(setDeveloper(devPayload));
+    // dispatch(setDeveloper({ developer })); // сокращенное создание объекта
+  };
+
+  // Задать значение минимальной цены:
+  const handleSetMinPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const priceValue = event.target.value;
+    const minPrice = 'minPrice';
+
+    const minPricePayload = {
+      priceValue: priceValue,
+      minPrice: minPrice,
+    };
+    dispatch(setMinPrice(minPricePayload));
+  };
+
+  // Задать значение максимальной цены:
+  const handleSetMaxPrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const maxPricePayload = {
+      maxPrice: 'maxPrice',
+      priceValue: event.target.value,
+    };
+    dispatch(setMaxPrice(maxPricePayload));
+  };
+
+  // Выбор оборудования в наличии / нет:
+  const handleStatusChange = () => {
+    dispatch(setStatus());
+  };
+
+  // Выбор "инверторное управление":
+  const handleInvertorControlStatusChange = () => {
+    dispatch(setInvertor());
+  };
+
+  // Выбор цвета:
+  const handleColorSelect = (color: string) => {
+    const colorPayload = {
+      color: color,
+    };
+    dispatch(setColor(colorPayload));
+  };
+
+  // Установка опции только "избранное":
+  const handleSelectOnlyFavourite = () => {
+    dispatch(setOnlyFavourite());
+  };
+
+  // Ресет всех фильтров:
+  const handleResetAllFilters = () => {
+    dispatch(resetFilters());
+  };
+
+  // Фильтр всех сплит-систем (для рендера):
+  const filteredSplitSystems: ProductCard_Type[] =
+    currentSplitSystemsData.filter((splitSystem) => {
+      // Производители:
+      // -----------------
+      const userSelectedDevelopers: string[] = [];
+      if (currentSplitSystemsFilter.developers.ballu) {
+        userSelectedDevelopers.push('ballu');
+      }
+
+      if (currentSplitSystemsFilter.developers.electrolux) {
+        userSelectedDevelopers.push('electrolux');
+      }
+
+      if (currentSplitSystemsFilter.developers.zanussi) {
+        userSelectedDevelopers.push('zanussi');
+      }
+
+      const matchesSelectedDevelopers: boolean = userSelectedDevelopers.length
+        ? userSelectedDevelopers.some((developer: string) => {
+            return splitSystem.title.toLowerCase().includes(developer);
+          })
+        : true;
+
+      // Цена:
+      // -----------------
+      const matchesMinPrice =
+        Number(splitSystem.price.replace(' ', '')) >=
+        currentSplitSystemsFilter.price.minPrice;
+
+      const matchesMaxPrice =
+        Number(splitSystem.price.replace(' ', '')) <=
+        currentSplitSystemsFilter.price.maxPrice;
+
+      // Наличие:
+      // -----------------
+      const matchesIsInStock = currentSplitSystemsFilter.isInStock
+        ? splitSystem.isInStock
+        : true;
+
+      // Инвертор:
+      // -----------------
+      const matchesInvertorControl = currentSplitSystemsFilter.invertor
+        ? splitSystem.invertor
+        : true;
+
+      // Цвет:
+      // -----------------
+      const userSelectedColors: string[] = [];
+      if (currentSplitSystemsFilter.color.black) {
+        userSelectedColors.push('черный');
+      }
+
+      if (currentSplitSystemsFilter.color.white) {
+        userSelectedColors.push('белый');
+      }
+
+      const matchesSelectedColor = userSelectedColors.length
+        ? userSelectedColors.some((color: string) => {
+            return splitSystem.color?.toLowerCase().includes(color);
+          })
+        : true;
+
+      // Только "избранное":
+      // -----------------
+      const matchesOnlyFavourite = currentSplitSystemsFilter.onlyFavourite
+        ? splitSystem.isInWhishList
+        : true;
+
+      return (
+        matchesInvertorControl &&
+        matchesSelectedDevelopers &&
+        matchesMinPrice &&
+        matchesMaxPrice &&
+        matchesIsInStock &&
+        matchesSelectedColor &&
+        matchesOnlyFavourite
+      );
+    });
 
   return (
     <InfoSection>
@@ -50,15 +219,36 @@ const SplitSystems = () => {
             <h3 className="font-[500] mb-1">Производитель:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentDevelopersFilterList.ballu}
+                  onChange={() => {
+                    handleDeveloperChange('ballu');
+                  }}
+                />
                 <label>Ballu</label>
               </div>
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentDevelopersFilterList.electrolux}
+                  onChange={() => {
+                    handleDeveloperChange('electrolux');
+                  }}
+                />
                 <label>Electrolux</label>
               </div>
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentDevelopersFilterList.zanussi}
+                  onChange={() => {
+                    handleDeveloperChange('zanussi');
+                  }}
+                />
                 <label>Zanussi</label>
               </div>
             </fieldset>
@@ -68,15 +258,37 @@ const SplitSystems = () => {
             <fieldset className="flex flex-col gap-1">
               <div className="flex flex-col gap-1 items-center">
                 <div>
-                  <label>От</label> <span>250 000</span>
+                  <label>От</label>{' '}
+                  <span>{currentMinAndMaxPriceValue.minPrice} Руб.</span>
                 </div>
-                <input type="range" className="mt-[2px]" />
+                <input
+                  type="range"
+                  className="mt-[2px]"
+                  value={currentMinAndMaxPriceValue.minPrice}
+                  step={100}
+                  min={24200}
+                  max={35800}
+                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    handleSetMinPrice(event);
+                  }}
+                />
               </div>
               <div className="flex flex-col gap-1 items-center">
                 <div>
-                  <label>До</label> <span>250 000</span>
+                  <label>До</label>{' '}
+                  <span>{currentMinAndMaxPriceValue.maxPrice} Руб.</span>
                 </div>
-                <input type="range" className="mt-[2px]" />
+                <input
+                  type="range"
+                  className="mt-[2px]"
+                  value={currentMinAndMaxPriceValue.maxPrice}
+                  step={100}
+                  min={24200}
+                  max={35800}
+                  onChange={(event) => {
+                    handleSetMaxPrice(event);
+                  }}
+                />
               </div>
             </fieldset>
           </div>
@@ -84,12 +296,15 @@ const SplitSystems = () => {
             <h3 className="font-[500] mb-1">Статус:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentProductStatus}
+                  onChange={() => {
+                    handleStatusChange();
+                  }}
+                />
                 <label>В наличии</label>
-              </div>
-              <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
-                <label>Под заказ</label>
               </div>
             </fieldset>
           </div>
@@ -97,8 +312,15 @@ const SplitSystems = () => {
             <h3 className="font-[500] mb-1">Инвертор:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
-                <label>Нет</label>
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentInvertorControlStatus}
+                  onChange={() => {
+                    handleInvertorControlStatusChange();
+                  }}
+                />
+                <label>Да</label>
               </div>
             </fieldset>
           </div>
@@ -106,11 +328,25 @@ const SplitSystems = () => {
             <h3 className="font-[500] mb-1">Цвет корпуса:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentColor.white}
+                  onChange={() => {
+                    handleColorSelect('white');
+                  }}
+                />
                 <label>Белый</label>
               </div>
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentColor.black}
+                  onChange={() => {
+                    handleColorSelect('black');
+                  }}
+                />
                 <label>Черный</label>
               </div>
             </fieldset>
@@ -120,17 +356,31 @@ const SplitSystems = () => {
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
                 <label>Да</label>
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentOnlyFavouriteOption}
+                  onChange={() => {
+                    handleSelectOnlyFavourite();
+                  }}
+                />
               </div>
             </fieldset>
           </div>
-          <button className="p-2 mt-3 col-span-2 mx-auto w-[150px] text-[14px] text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] sm:text-[18px] cursor-pointer sm:w-[200px] xs:mt-6 md:col-span-3">
+          <button
+            type="button"
+            className="p-2 mt-3 col-span-2 mx-auto w-[150px] text-[14px] text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] sm:text-[18px] cursor-pointer sm:w-[200px] xs:mt-6 md:col-span-3"
+            onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+              e.preventDefault();
+              handleResetAllFilters();
+            }}
+          >
             Сбросить фильтры
           </button>
         </form>
 
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
-          {currentSplitSystemsData.map((splitSystemInfo) => {
+          {filteredSplitSystems.map((splitSystemInfo) => {
             return (
               <ProductCard
                 // необязательные характеристики:
