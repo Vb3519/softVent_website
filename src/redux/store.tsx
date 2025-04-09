@@ -7,6 +7,8 @@ import shoppingCartReducer from './slices/shoppingCartSlice';
 
 // Редьюсеры фильтров:
 import splitSystemsFilterReducer from './slices/splitSystemsFilterSlice';
+import ventilationUnitsFilterReducer from './slices/ventilationUnitsFilterSlice';
+import microClimateFilterReducer from './slices/microClimateFilterSlice';
 
 const store = configureStore({
   reducer: {
@@ -14,8 +16,11 @@ const store = configureStore({
     whishList: whishListReducer,
     allProducts: allProductsReducer,
     shoppingCart: shoppingCartReducer,
+
     // фильтры:
     splitSystemsFilter: splitSystemsFilterReducer,
+    ventilationUnitsFilter: ventilationUnitsFilterReducer,
+    microClimateFilter: microClimateFilterReducer,
   },
 });
 

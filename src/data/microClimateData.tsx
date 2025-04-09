@@ -100,7 +100,7 @@ const microClimateData = [
     maxAirFlow: '150',
     img: boneco_img3,
     color: 'Черный',
-    price: '7 100',
+    price: '10 250',
     id: uuidv4(),
     category: 'microClimateData',
   },

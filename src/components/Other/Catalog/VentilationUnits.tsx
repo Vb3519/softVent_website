@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CiShoppingCart } from 'react-icons/ci';
 import { CiStar } from 'react-icons/ci';
 
+import formatPriceValue from '../../../utils/formatPriceValue';
+
 // UI:
 import InfoSection from '../../UI/InfoSection';
 import ProductCard from '../../UI/ProductCard';
@@ -13,6 +15,19 @@ import {
   selectHvacUnits,
   setCurrentCategory,
 } from '../../../redux/slices/allProductsSlice';
+
+import {
+  // Селектор:
+  selectVentilationUnitsFilter,
+  // Действия:
+  setDeveloper,
+  setPrice,
+  setIsInStock,
+  setHeater,
+  setRecup,
+  setOnlyFavourite,
+  resetFilters,
+} from '../../../redux/slices/ventilationUnitsFilterSlice';
 
 // ТИПЫ:
 import { ProductCard_Type } from '../../UI/ProductCard';
@@ -30,6 +45,129 @@ const VentilationUnits = () => {
       dispatch(setCurrentCategory('hvacUnitsData'));
     }
   }, []);
+
+  //---------------------------------------
+  // ФИЛЬТРЫ:
+  //---------------------------------------
+  const currentVentiltaionUnitsFilter = useSelector(
+    selectVentilationUnitsFilter
+  );
+
+  // Выбор производителя:
+  const handleSetDeveloper = () => {
+    dispatch(setDeveloper());
+  };
+
+  // Задать значение мин. / макс. цены:
+  const handleSetPrice = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    priceType: string
+  ) => {
+    const priceValue: string = event.target.value;
+
+    const pricePayload = {
+      priceType: priceType,
+      priceValue: priceValue,
+    };
+    dispatch(setPrice(pricePayload));
+  };
+
+  // Выбор оборудования в наличии / нет:
+  const handleSetIsInStock = () => {
+    dispatch(setIsInStock());
+  };
+
+  // Выбор типа нагревателя (эл-во / вода):
+  const handleSetHeater = (heaterType: string) => {
+    dispatch(setHeater(heaterType));
+  };
+
+  // Выбор с рекуператором / без:
+  const handleSetRecup = () => {
+    dispatch(setRecup());
+  };
+
+  // Установка опции только "избранное":
+  const handleSetOnlyFavourite = () => {
+    dispatch(setOnlyFavourite());
+  };
+
+  // Ресет всех фильтров:
+  const handleResetFilters = () => {
+    dispatch(resetFilters());
+  };
+
+  // Фильтр всех вент-систем (для рендера):
+  const filteredHvacUnits: ProductCard_Type[] = currentHvacUnitsData.filter(
+    (ventilationUnit) => {
+      // Производитель:
+      const matchesDeveloper: boolean = currentVentiltaionUnitsFilter.developer
+        ? ventilationUnit.title.toLowerCase().includes('naveka')
+        : true;
+
+      // Цена:
+      const matchesMinPrice: boolean =
+        // .replace(' ', '') убирает пробел в цене
+        Number(ventilationUnit.price.replace(' ', '')) >=
+        currentVentiltaionUnitsFilter.price.minPrice;
+
+      const matchesMaxPrice: boolean =
+        Number(ventilationUnit.price.replace(' ', '')) <=
+        currentVentiltaionUnitsFilter.price.maxPrice;
+
+      // Наличие на складе:
+      const matchesIsInStock: boolean = currentVentiltaionUnitsFilter.isInStock
+        ? ventilationUnit.isInStock
+        : true;
+
+      // Тип нагревателя:
+      const selectedHeaterTypes: string[] = [];
+      if (currentVentiltaionUnitsFilter.heater.water) {
+        selectedHeaterTypes.push('водяной');
+      }
+
+      if (currentVentiltaionUnitsFilter.heater.electric) {
+        selectedHeaterTypes.push('электрический');
+      }
+
+      const matchesHeaterType: boolean = selectedHeaterTypes.length
+        ? selectedHeaterTypes.some((heater: string) => {
+            return ventilationUnit.heater?.toLowerCase().includes(heater);
+          })
+        : true;
+
+      // Наличие рекуператора:
+      const matchesRecup: boolean | undefined =
+        currentVentiltaionUnitsFilter.recup ? ventilationUnit.recup : true;
+
+      // Только "избранное":
+      const matchesOnlyFavourite: boolean =
+        currentVentiltaionUnitsFilter.onlyFavourite
+          ? ventilationUnit.isInWhishList
+          : true;
+
+      return (
+        matchesDeveloper &&
+        matchesMinPrice &&
+        matchesMaxPrice &&
+        matchesIsInStock &&
+        matchesHeaterType &&
+        matchesRecup &&
+        matchesOnlyFavourite
+      );
+    }
+  );
+
+  // Добавление пробела в цену на оборудование (чтобы отделить разряд):
+  const maxPrice: string = formatPriceValue(
+    currentVentiltaionUnitsFilter.price.maxPrice,
+    3
+  );
+
+  const minPrice: string = formatPriceValue(
+    currentVentiltaionUnitsFilter.price.minPrice,
+    3
+  );
 
   return (
     <InfoSection>
@@ -51,7 +189,12 @@ const VentilationUnits = () => {
             <h3 className="font-[500] mb-1">Производитель:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentVentiltaionUnitsFilter.developer}
+                  onChange={handleSetDeveloper}
+                />
                 <label>Naveka</label>
               </div>
             </fieldset>
@@ -61,15 +204,35 @@ const VentilationUnits = () => {
             <fieldset className="flex flex-col gap-1">
               <div className="flex flex-col gap-1 items-center">
                 <div>
-                  <label>От</label> <span>250 000</span>
+                  <label>От</label> <span>{minPrice} Руб.</span>
                 </div>
-                <input type="range" className="mt-[2px]" />
+                <input
+                  type="range"
+                  className="mt-[2px]"
+                  value={currentVentiltaionUnitsFilter.price.minPrice}
+                  min={126175}
+                  max={289750}
+                  step={100}
+                  onChange={(e) => {
+                    handleSetPrice(e, 'minPrice');
+                  }}
+                />
               </div>
               <div className="flex flex-col gap-1 items-center">
                 <div>
-                  <label>До</label> <span>250 000</span>
+                  <label>До</label> <span>{maxPrice} Руб.</span>
                 </div>
-                <input type="range" className="mt-[2px]" />
+                <input
+                  type="range"
+                  className="mt-[2px]"
+                  value={currentVentiltaionUnitsFilter.price.maxPrice}
+                  min={126175}
+                  max={289750}
+                  step={100}
+                  onChange={(e) => {
+                    handleSetPrice(e, 'maxPrice');
+                  }}
+                />
               </div>
             </fieldset>
           </div>
@@ -77,12 +240,13 @@ const VentilationUnits = () => {
             <h3 className="font-[500] mb-1">Статус:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentVentiltaionUnitsFilter.isInStock}
+                  onChange={handleSetIsInStock}
+                />
                 <label>В наличии</label>
-              </div>
-              <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
-                <label>Под заказ</label>
               </div>
             </fieldset>
           </div>
@@ -90,11 +254,25 @@ const VentilationUnits = () => {
             <h3 className="font-[500] mb-1">Нагреватель:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentVentiltaionUnitsFilter.heater.water}
+                  onChange={() => {
+                    handleSetHeater('water');
+                  }}
+                />
                 <label>Вода</label>
               </div>
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentVentiltaionUnitsFilter.heater.electric}
+                  onChange={() => {
+                    handleSetHeater('electric');
+                  }}
+                />
                 <label>Электричество</label>
               </div>
             </fieldset>
@@ -103,12 +281,13 @@ const VentilationUnits = () => {
             <h3 className="font-[500] mb-1">Рекуператор:</h3>
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentVentiltaionUnitsFilter.recup}
+                  onChange={handleSetRecup}
+                />
                 <label>Да</label>
-              </div>
-              <div className="flex gap-1 items-center">
-                <input type="checkbox" className="mt-[2px]" />
-                <label>Нет</label>
               </div>
             </fieldset>
           </div>
@@ -117,17 +296,25 @@ const VentilationUnits = () => {
             <fieldset className="flex flex-col gap-1">
               <div className="flex gap-1 items-center">
                 <label>Да</label>
-                <input type="checkbox" className="mt-[2px]" />
+                <input
+                  type="checkbox"
+                  className="mt-[2px]"
+                  checked={currentVentiltaionUnitsFilter.onlyFavourite}
+                  onChange={handleSetOnlyFavourite}
+                />
               </div>
             </fieldset>
           </div>
-          <button className="p-2 mt-3 col-span-2 mx-auto w-[150px] text-[14px] text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] sm:text-[18px] cursor-pointer sm:w-[200px] xs:mt-6 md:col-span-3">
+          <button
+            className="p-2 mt-3 col-span-2 mx-auto w-[150px] text-[14px] text-center bg-gradient-to-r from-blue-400 to-blue-500 rounded-md text-[whitesmoke] font-[500] transition duration-200 ease-in hover:shadow-[0px_0px_10px_rgba(0,0,0,0.4)] sm:text-[18px] cursor-pointer sm:w-[200px] xs:mt-6 md:col-span-3"
+            onClick={handleResetFilters}
+          >
             Сбросить фильтры
           </button>
         </form>
 
         <div className="flex flex-col items-center gap-5 xl:grid grid-cols-2 xl:gap-10">
-          {currentHvacUnitsData.map((hvacUnitInfo) => {
+          {filteredHvacUnits.map((hvacUnitInfo) => {
             return (
               <ProductCard
                 category={hvacUnitInfo.category}

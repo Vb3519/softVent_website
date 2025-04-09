@@ -31,7 +31,7 @@ export interface ProductCard_Type {
   area?: string; // увлажнители воздуха
   invertor?: boolean; // сплит-системы
   heater?: string; // вент-установки
-  recup?: string; // вент-установки
+  recup?: boolean; // вент-установки
   color?: string; // увлажнители воздуха и сплит-системы
   // -----
 
@@ -156,16 +156,15 @@ const ProductCard: React.FC<ProductCard_Type> = (
           {productInfo.title}
         </h4>
         <ul className="flex flex-col gap-2">
-          {productInfo.invertor ? (
+          {productInfo.category === 'splitSystemsData' ? (
             <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
               Инверторная технология:{' '}
-              <span className="text-[#6E6E6E] font-[700]">Да</span>
+              <span className="text-[#6E6E6E] font-[700]">
+                {productInfo.invertor ? 'Да' : 'Нет'}
+              </span>
             </li>
           ) : (
-            <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
-              Инверторная технология:{' '}
-              <span className="text-[#6E6E6E] font-[700]">Нет</span>
-            </li>
+            ''
           )}
 
           {productInfo.area ? (
@@ -213,11 +212,11 @@ const ProductCard: React.FC<ProductCard_Type> = (
             ''
           )}
 
-          {productInfo.recup ? (
+          {productInfo.category === 'hvacUnitsData' ? (
             <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
               Рекуператор:{' '}
               <span className="text-[#6E6E6E] font-[700]">
-                {productInfo.recup}
+                {productInfo.recup ? 'Да' : 'Нет'}
               </span>
             </li>
           ) : (

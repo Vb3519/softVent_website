@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useLocation } from 'react-router-dom';
 
+import formatPriceValue from '../../../utils/formatPriceValue';
+
 // UI:
 import InfoSection from '../../UI/InfoSection';
 import ProductCard from '../../UI/ProductCard';
@@ -189,15 +191,26 @@ const SplitSystems = () => {
         : true;
 
       return (
-        matchesInvertorControl &&
         matchesSelectedDevelopers &&
         matchesMinPrice &&
         matchesMaxPrice &&
         matchesIsInStock &&
+        matchesInvertorControl &&
         matchesSelectedColor &&
         matchesOnlyFavourite
       );
     });
+
+  // Добавление пробела в цену на оборудование (чтобы отделить разряд):
+  const minPrice: string = formatPriceValue(
+    currentSplitSystemsFilter.price.minPrice,
+    2
+  );
+
+  const maxPrice: string = formatPriceValue(
+    currentSplitSystemsFilter.price.maxPrice,
+    2
+  );
 
   return (
     <InfoSection>
@@ -258,8 +271,7 @@ const SplitSystems = () => {
             <fieldset className="flex flex-col gap-1">
               <div className="flex flex-col gap-1 items-center">
                 <div>
-                  <label>От</label>{' '}
-                  <span>{currentMinAndMaxPriceValue.minPrice} Руб.</span>
+                  <label>От</label> <span>{minPrice} Руб.</span>
                 </div>
                 <input
                   type="range"
@@ -275,8 +287,7 @@ const SplitSystems = () => {
               </div>
               <div className="flex flex-col gap-1 items-center">
                 <div>
-                  <label>До</label>{' '}
-                  <span>{currentMinAndMaxPriceValue.maxPrice} Руб.</span>
+                  <label>До</label> <span>{maxPrice} Руб.</span>
                 </div>
                 <input
                   type="range"
