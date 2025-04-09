@@ -8,6 +8,8 @@ import { HiOutlineViewGrid } from 'react-icons/hi';
 import { PiStarBold } from 'react-icons/pi';
 import { FiShoppingCart } from 'react-icons/fi';
 
+import SearchBar from './SearchBar';
+
 import {
   selectMobileMenuState,
   toggleMobileMenu,
@@ -35,12 +37,21 @@ const HeaderRowTwo = () => {
     }
   };
 
+  const handleMobileMenuAutoClose = () => {
+    if (window.innerWidth >= 1024 && isMobileMenuOpened) {
+      document.body.classList.remove('mobile-menu-opened');
+    }
+  };
+
+  window.addEventListener('resize', handleMobileMenuAutoClose);
+
   useEffect(() => {
     window.addEventListener('scroll', handlePageScoll);
 
     // Убираем обработчик, когда компонент размонтирован
     return () => {
       window.removeEventListener('scroll', handlePageScoll);
+      window.removeEventListener('resize', handleMobileMenuAutoClose);
     };
   }, [isScrolled]);
 
@@ -125,25 +136,7 @@ const HeaderRowTwo = () => {
           </div>
         </div>
 
-        <div className="w-[100%] max-w-[365px] flex items-center bg-gray-200 rounded-md pr-2 2xl:max-w-[400px]">
-          <input className="w-[100%] p-2 outline-none" placeholder="Поиск" />
-          <div className="cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-5 text-gray-500"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-              />
-            </svg>
-          </div>
-        </div>
+        <SearchBar />
 
         <ul className="flex gap-3 2xl:gap-8">
           <li className="cursor-pointer">

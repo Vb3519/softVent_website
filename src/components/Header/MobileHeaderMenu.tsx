@@ -1,47 +1,44 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-import { selectMobileMenuState } from '../../redux/slices/mobileMenuSlice';
+import {
+  selectMobileMenuState,
+  toggleMobileMenu,
+} from '../../redux/slices/mobileMenuSlice';
+
+import SearchBar from './HeaderRowTwo/SearchBar';
 
 const MobileHeaderMenu = () => {
+  const dispatch = useDispatch();
   const isMobileMenuOpened: boolean = useSelector(selectMobileMenuState);
+
+  const handleCloseMobileMenu = () => {
+    if (isMobileMenuOpened) {
+      dispatch(toggleMobileMenu());
+      document.body.classList.remove('mobile-menu-opened');
+    }
+  };
 
   return (
     <div
-      className={`w-[100%] h-screen p-3 flex-col fixed bg-[white] z-50 xs:px-16 sm:px-26 md:px-36 lg:hidden ${
-        isMobileMenuOpened ? 'flex' : 'hidden'
+      className={`w-[100%] h-screen p-3 flex-col fixed bg-[white] z-50 opacity-0 xs:px-16 sm:px-26 md:px-36 lg:hidden ${
+        isMobileMenuOpened ? 'flex active-menu' : 'hidden-menu'
       }`}
     >
       {/* --- ПОИСК: --- */}
       {/* --- ПОИСК: --- */}
       {/* --- ПОИСК: --- */}
-      <div className="w-[100%] max-w-[365px] flex items-center bg-gray-200 rounded-md pr-2">
-        <input className="w-[100%] p-2 outline-none" placeholder="Поиск" />
-        <div className="cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="size-5 text-gray-500"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-          </svg>
-        </div>
-      </div>
-
+      <SearchBar />
       {/* --- КАТАЛОГ / ПОКУПАТЕЛЯМ / СЕРВИС: --- */}
-
       {/* --- КАТАЛОГ: --- */}
       {/* --- КАТАЛОГ: --- */}
       {/* --- КАТАЛОГ: --- */}
-      <div className="font-[inter] flex flex-col gap-1 py-5 border-b-1 border-b-gray-200 md:flex-row md:justify-between">
+      <div
+        className={`font-[inter] flex flex-col gap-1 py-5 border-b-1 border-b-gray-200 md:flex-row md:justify-between ${
+          isMobileMenuOpened ? 'active-menu-container' : 'hidden-menu-container'
+        }`}
+      >
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-1">
             <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
@@ -64,13 +61,22 @@ const MobileHeaderMenu = () => {
           </div>
 
           <ul className="flex flex-col gap-2 py-3 text-[14px] leading-[20px] xs:text-[16px]">
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="catalog/split-systems">Кондиционеры</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="catalog/ventilation-units">Вентиляция</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="catalog/home-microclimate">
                 Домашний микроклимат
               </NavLink>
@@ -102,10 +108,16 @@ const MobileHeaderMenu = () => {
             </svg>
           </div>
           <ul className="flex flex-col gap-2 py-3 text-[14px] leading-[20px] xs:text-[16px]">
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="promotions">Акции и скидки</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="about">О компании</NavLink>
             </li>
           </ul>
@@ -136,27 +148,45 @@ const MobileHeaderMenu = () => {
             </svg>
           </div>
           <ul className="flex flex-col gap-2 pt-3 text-[14px] leading-[20px] xs:text-[16px]">
-            <li className="text-[#232323]hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323]hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="service/delivery">Доставка</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="service/payment">Оплата</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="service/design">Проектирование</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="service/installation">Монтаж</NavLink>
             </li>
-            <li className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]">
+            <li
+              className="text-[#232323] hover:cursor-pointer transition duration-200 ease-in hover:text-[#1b9ae9]"
+              onClick={handleCloseMobileMenu}
+            >
               <NavLink to="service/guarantee">Гарантия</NavLink>
             </li>
           </ul>
         </div>
       </div>
-
       {/* --- ТЕЛ. / РЕЖИМ РАБОТЫ / АДРЕС / ЭЛ. ПОЧТА: --- */}
-      <ul className="flex flex-col gap-3 py-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
+      <ul
+        className={`flex flex-col gap-3 py-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px] ${
+          isMobileMenuOpened ? 'active-menu-container' : 'hidden-menu-container'
+        }`}
+      >
         <li className="flex flex-col gap-1">
           <p className="flex gap-1 text-center text-[#6E6E6E]">
             Телефоны для связи:{' '}
@@ -197,9 +227,12 @@ const MobileHeaderMenu = () => {
           <p className="font-[500]">Vb415@bk.ru</p>
         </li>
       </ul>
-
       {/* --- СОЦ. СЕТИ: --- */}
-      <ul className="flex gap-3 pt-4 border-t-1 border-t-gray-200">
+      <ul
+        className={`flex gap-3 pt-4 border-t-1 border-t-gray-200 ${
+          isMobileMenuOpened ? 'active-menu-container' : 'hidden-menu-container'
+        }`}
+      >
         <li className="w-[35px] h-[35px] p-2 flex items-center justify-center bg-[#1B9AE9] rounded-[50%] cursor-pointer transition duration-200 ease-in hover:bg-[#1b9ae9e0] hover:shadow-[0px_0px_10px_rgba(0,0,0,0.2)]">
           <svg
             width="27"

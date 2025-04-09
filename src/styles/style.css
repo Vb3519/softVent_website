@@ -4,6 +4,10 @@
   --breakpoint-xs: 450px;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 .services-layer {
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
 }
@@ -23,6 +27,29 @@
   top: 0;
   left: 0;
   transition: opacity 1.5s, top 1s, left 1.5s;
+}
+
+.active-menu {
+  opacity: 1;
+  max-height: 960px;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.hidden-menu {
+  opacity: 0;
+  max-height: 0;
+  transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+.active-menu-container {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}
+
+.hidden-menu-container {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  display: none;
 }
 
 .mobile-menu-opened {
