@@ -22,7 +22,7 @@ const MobileHeaderMenu = () => {
 
   return (
     <div
-      className={`w-[100%] h-screen p-3 flex-col fixed bg-[white] z-50 opacity-0 xs:px-16 sm:px-26 md:px-36 lg:hidden ${
+      className={`w-[100%] h-screen p-3 flex-col fixed bg-[white] z-50 opacity-0 overflow-y-auto xs:px-16 sm:px-26 md:px-36 lg:hidden ${
         isMobileMenuOpened ? 'flex active-menu' : 'hidden-menu'
       }`}
     >
