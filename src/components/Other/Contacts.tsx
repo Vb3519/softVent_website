@@ -1,11 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
+// UI:
 import InfoSection from '../UI/InfoSection';
 import ServicesList from '../Main/ServicesMain/ServicesList';
 import ContactForm from '../UI/ContactForm';
 
+import manager_img from '../../assets/images/manager.jpg';
+
 const Contacts = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
     <InfoSection>
       <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
@@ -114,7 +123,26 @@ const Contacts = () => {
         </div>
       </div>
       <ServicesList className="lg:px-0" />
-      <ContactForm />
+
+      <div
+        className="p-2 flex items-center justify-center gap-12 overflow-x-hidden"
+        ref={ref}
+      >
+        <ContactForm
+          className="basis-[100%] xl:basis-[50%]"
+          title={'Закажите бесплатную консультацию'}
+        />
+        <div
+          className={`max-h-[390px] justify-center basis-[50%] hidden xl:flex relative opacity-0 translate-x-[100vw] ${
+            inView ? 'contact-form-img-animation' : ''
+          }`}
+        >
+          <img
+            className="max-h-[390px] min-h-[390px] min-w-[585px] rounded-2xl shadow-[0px_0px_10px_rgba(0,0,0,0.15)]"
+            src={manager_img}
+          ></img>
+        </div>
+      </div>
     </InfoSection>
   );
 };

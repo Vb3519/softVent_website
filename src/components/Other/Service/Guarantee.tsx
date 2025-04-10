@@ -1,10 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
+// UI:
 import InfoSection from '../../UI/InfoSection';
+import ContactForm from '../../UI/ContactForm';
+
 import guarantee_img from '../../../assets/images/guarantee_img.jpg';
+import engineer_3 from '../../../assets/images/engineer_3.jpg';
 
 const Guarantee = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
     <InfoSection>
       <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
@@ -79,6 +89,26 @@ const Guarantee = () => {
           срока, распространяющегося на здание.
         </li>
       </ul>
+
+      <div
+        className="p-2 flex items-center justify-center gap-12 overflow-x-hidden lg:mt-8"
+        ref={ref}
+      >
+        <ContactForm
+          className="basis-[100%] xl:basis-[50%]"
+          title={'Гарантийное обслуживание Вашей техники!'}
+        />
+        <div
+          className={`max-h-[390px] justify-center basis-[50%] hidden xl:flex relative opacity-0 translate-x-[100vw] ${
+            inView ? 'contact-form-img-animation' : ''
+          }`}
+        >
+          <img
+            className="max-h-[390px] min-h-[390px] min-w-[585px] rounded-2xl shadow-[0px_0px_10px_rgba(0,0,0,0.4)]"
+            src={engineer_3}
+          ></img>
+        </div>
+      </div>
     </InfoSection>
   );
 };

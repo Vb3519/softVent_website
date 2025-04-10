@@ -13,7 +13,7 @@ const SpecialOffers = () => {
   return (
     <section className="pt-4 mb-3 px-3 xs:px-8 sm:mb-5 xl:px-31 lg:mb-10 2xl:px-[320px]">
       <div className="font-[inter]">
-        <h2 className="text-center pb-4  text-[22px]">
+        <h2 className="text-center pb-4 font-[600] text-[22px]">
           Специальные предложения
         </h2>
 

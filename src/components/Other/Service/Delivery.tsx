@@ -1,10 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
+import manager_3 from '../../../assets/images/manager_3.jpg';
 import delivery_img from '../../../assets/images/delivery.jpg';
+
+// UI:
 import InfoSection from '../../UI/InfoSection';
+import ContactForm from '../../UI/ContactForm';
 
 const Delivery = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
     <InfoSection>
       <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
@@ -74,6 +84,26 @@ const Delivery = () => {
             документов и разгрузочные работы отводится не более 15 мин.
           </li>
         </ul>
+      </div>
+
+      <div
+        className="p-2 flex items-center justify-center gap-12 overflow-x-hidden lg:mt-8"
+        ref={ref}
+      >
+        <ContactForm
+          className="basis-[100%] xl:basis-[50%]"
+          title={'Остались вопросы? Мы Вам перезвоним!'}
+        />
+        <div
+          className={`max-h-[390px] justify-center basis-[50%] hidden xl:flex relative opacity-0 translate-x-[100vw] ${
+            inView ? 'contact-form-img-animation' : ''
+          }`}
+        >
+          <img
+            className="max-h-[390px] min-h-[390px] min-w-[585px] rounded-2xl shadow-[0px_0px_10px_rgba(0,0,0,0.15)]"
+            src={manager_3}
+          ></img>
+        </div>
       </div>
     </InfoSection>
   );

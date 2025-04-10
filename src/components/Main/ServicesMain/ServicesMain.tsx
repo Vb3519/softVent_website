@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import hvac_family from '../../../assets/images/family_hvac.png';
+import family_hvac from '../../../assets/images/family_hvac.png';
 
 const ServicesMain = () => {
   return (
@@ -31,7 +31,7 @@ const ServicesMain = () => {
         <div className="rounded-2xl elem-shadow xl:max-w-[900px] xl:min-h-[485px]">
           <img
             className="rounded-2xl w-[100%] lg:min-h-[460px] xl:min-h-[485px] 2xl:max-h-[1075px]"
-            src={hvac_family}
+            src={family_hvac}
             alt="семья настраивает кондиционер"
           ></img>
         </div>

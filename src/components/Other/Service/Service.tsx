@@ -7,6 +7,7 @@ import { FaDraftingCompass } from 'react-icons/fa';
 import { BsTools } from 'react-icons/bs';
 import { FaGears } from 'react-icons/fa6';
 
+// UI:
 import InfoSection from '../../UI/InfoSection';
 
 const Service = () => {

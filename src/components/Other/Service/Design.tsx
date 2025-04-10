@@ -1,10 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
+// UI:
 import InfoSection from '../../UI/InfoSection';
+import ContactForm from '../../UI/ContactForm';
+
 import project_img from '../../../assets/images/project.png';
+import engineer_2 from '../../../assets/images/engineer_2.png';
 
 const Design = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
     <InfoSection>
       <div className="font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
@@ -84,6 +94,26 @@ const Design = () => {
             кондиционирования;
           </li>
         </ul>
+      </div>
+
+      <div
+        className="p-2 flex items-center justify-center gap-12 overflow-x-hidden lg:mt-8"
+        ref={ref}
+      >
+        <ContactForm
+          className="basis-[100%] xl:basis-[50%]"
+          title={'Закажите бесплатный выезд специалиста!'}
+        />
+        <div
+          className={`max-h-[390px] justify-center basis-[50%] hidden xl:flex relative opacity-0 translate-x-[100vw] ${
+            inView ? 'contact-form-img-animation' : ''
+          }`}
+        >
+          <img
+            className="max-h-[390px] min-h-[390px] min-w-[585px] rounded-2xl shadow-[0px_0px_10px_rgba(0,0,0,0.2)]"
+            src={engineer_2}
+          ></img>
+        </div>
       </div>
     </InfoSection>
   );

@@ -1,15 +1,18 @@
 import React from 'react';
 
-const ContactForm = () => {
+interface ContactForm_Type {
+  className?: string;
+  title: string;
+}
+
+const ContactForm: React.FC<ContactForm_Type> = ({ className, title }) => {
   return (
     <form
-      className="max-w-[750px] m-auto mt-8 flex flex-col gap-8 p-4 elem-shadow rounded-2xl text-[14px] leading-[20px] sm:text-[16px] lg:mt-0 lg:text-[18px] lg:leading-[25px]"
+      className={`max-w-[750px] m-auto mt-8 flex flex-col gap-8 p-4 elem-shadow rounded-2xl text-[14px] leading-[20px] sm:text-[16px] lg:mt-0 lg:text-[18px] lg:leading-[25px] ${className}`}
       action=""
       method="post"
     >
-      <h3 className="text-center font-[600]">
-        Закажите бесплатную консультацию
-      </h3>
+      <h3 className="text-center font-[600]">{title}</h3>
       <fieldset className="flex flex-col gap-3 items-center">
         <label className="w-[100%] max-w-[500px] text-left" htmlFor="name">
           Как к Вам обращаться?

@@ -29,6 +29,12 @@ html {
   transition: opacity 1.5s, top 1s, left 1.5s;
 }
 
+.contact-form-img-animation {
+  opacity: 1;
+  translate: 0;
+  transition: opacity 1.5s, translate 0.5s;
+}
+
 .active-menu {
   opacity: 1;
   max-height: 960px;
