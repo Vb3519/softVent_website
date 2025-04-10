@@ -66,13 +66,24 @@ const HeaderRowTwo = () => {
     }
   };
 
+  // Закрытие мобильного меню навигации при клике на эмблему сайта:
+  const handleMobileMenuClose = () => {
+    if (isMobileMenuOpened) {
+      dispatch(toggleMobileMenu());
+      document.body.classList.remove('mobile-menu-opened');
+    }
+  };
+
   return (
     <div
       className={`font-[inter] w-full flex justify-between gap-5 p-3 border-b-1 border-b-[rgba(114,114,114,0.2)] xs:px-8 lg:px-8 xl:px-14 2xl:px-50 sticky top-0 z-10 bg-[white] ${
         isScrolled ? 'elem-shadow' : ''
       }`}
     >
-      <div className="flex items-center relative">
+      <div
+        className="flex items-center relative"
+        onClick={handleMobileMenuClose}
+      >
         <NavLink to="/" className="group">
           <GiFeatheredWing className="absolute top-0 left-[-22px] text-[25px] opacity-[20%] hidden xs:block transition duration-200 ease-in group-hover:text-[#3b9dca] group-hover:opacity-100" />
           <span className="text-[25px] font-[600]">Soft</span>

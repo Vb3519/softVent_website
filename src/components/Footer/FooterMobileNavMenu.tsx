@@ -14,7 +14,7 @@ const FooterMobileNavMenu = () => {
   const currentShoppingCart = useSelector(selectCurrentShoppingCart);
 
   return (
-    <nav className="font-[inter] p-3 elem-shadow fixed bottom-0 w-full z-10 bg-[white] xs:px-8 xl:px-14 lg:hidden">
+    <nav className="font-[inter] p-3 elem-shadow fixed bottom-0 w-full z-10 bg-[white] px-8 xl:px-14 lg:hidden">
       <ul className="flex gap-1 justify-between md:justify-center md:gap-16">
         <li className="cursor-pointer">
           <NavLink to="catalog">
@@ -32,7 +32,7 @@ const FooterMobileNavMenu = () => {
             <PiStarBold className="text-[26px] opacity-80" />
             <span>Избранное</span>
           </NavLink>
-          <span className="font-[inter] text-[white] text-[15px] top-[-7px] left-[37px] flex items-center justify-center absolute w-[20px] h-[20px] rounded-[50%] bg-gradient-to-r from-blue-400 to-blue-500">
+          <span className="font-[inter] text-[white] text-[15px] top-[-7px] left-[33px] xs:left-[37px] flex items-center justify-center absolute w-[20px] h-[20px] rounded-[50%] bg-gradient-to-r from-blue-400 to-blue-500">
             {currentWhishList.length}
           </span>
         </li>

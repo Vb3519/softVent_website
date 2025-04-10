@@ -36,10 +36,11 @@ const ShoppingCart = () => {
                   // необязательные характеристики:
                   area={productInfo.area}
                   invertor={productInfo.invertor}
-                  heater={productInfo.heater}
                   recup={productInfo.recup}
+                  heater={productInfo.heater}
                   color={productInfo.color}
                   // -----
+                  category={productInfo.category}
                   key={productInfo.id}
                   isInStock={productInfo.isInStock}
                   isPopular={productInfo.isPopular}
@@ -66,7 +67,7 @@ const ShoppingCart = () => {
           </div>
         </div>
       ) : (
-        <div className="min-h-[400px] flex flex-col gap-5">
+        <div className="min-h-[560px] flex flex-col gap-5">
           <FiShoppingCart className="m-auto text-[150px] md:text-[200px] text-gray-200" />
           <div className="flex flex-col gap-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             <h3 className="font-[600] text-center">
@@ -92,11 +93,12 @@ export default ShoppingCart;
 
 interface ShoppingCartProductCard_Type {
   area?: string;
-  invertor?: string;
+  invertor?: boolean;
   heater?: string;
-  recup?: string;
+  recup?: boolean;
   color?: string;
 
+  category: string;
   isInStock: boolean;
   isPopular: boolean;
   title: string;
@@ -157,11 +159,11 @@ const ShoppingCartProductCard: React.FC<ShoppingCartProductCard_Type> = (
           {productInfo.title}
         </h4>
         <ul className="flex flex-col gap-2">
-          {productInfo.invertor ? (
+          {productInfo.category === 'splitSystemsData' ? (
             <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
               Инверторная технология:{' '}
               <span className="text-[#6E6E6E] font-[700]">
-                ({productInfo.invertor})
+                {productInfo.invertor ? 'Да' : 'Нет'}
               </span>
             </li>
           ) : (
@@ -213,11 +215,11 @@ const ShoppingCartProductCard: React.FC<ShoppingCartProductCard_Type> = (
             ''
           )}
 
-          {productInfo.recup ? (
+          {productInfo.category === 'hvacUnitsData' ? (
             <li className="text-[12px] leading-[15px] text-[#6E6E6E] xs:text-[14px] sm:text-[16px] sm:leading-[20px]">
               Рекуператор:{' '}
               <span className="text-[#6E6E6E] font-[700]">
-                {productInfo.recup}
+                {productInfo.recup ? 'Да' : 'Нет'}
               </span>
             </li>
           ) : (

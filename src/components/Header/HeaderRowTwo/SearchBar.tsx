@@ -7,7 +7,11 @@ import {
   selectMobileMenuState,
 } from '../../../redux/slices/mobileMenuSlice';
 
-const SearchBar = () => {
+interface searchBar_Type {
+  className?: string;
+}
+
+const SearchBar: React.FC<searchBar_Type> = ({ className }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -72,7 +76,7 @@ const SearchBar = () => {
 
   return (
     <form
-      className="w-[100%] max-w-[365px] flex items-center bg-gray-200 rounded-md pr-2 2xl:max-w-[400px]"
+      className={`w-[100%] max-w-[365px] flex items-center bg-gray-200 rounded-md pr-2 2xl:max-w-[400px] ${className}`}
       onSubmit={(event: React.FormEvent) => {
         event.preventDefault();
         handleNavigateRoute();

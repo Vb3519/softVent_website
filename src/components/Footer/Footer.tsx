@@ -13,21 +13,15 @@ const Footer = () => {
       <div className="font-[inter] flex flex-col gap-1 justify-center pt-5 lg:flex-row lg:gap-5 lg:pb-2 xl:gap-10">
         <div>
           <div className="flex justify-between items-center">
-            <p className="text-[16px] text-[#232323] font-[500]">Каталог</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 lg:hidden"
+            <NavLink
+              to="/catalog"
+              className="lg:hidden text-[16px] text-[#232323] font-[500] transition duration-200 ease-in hover:text-[#1B9AE9]"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
+              Каталог
+            </NavLink>
+            <p className="hidden lg:block text-[16px] text-[#232323] font-[500]">
+              Каталог
+            </p>
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
             <li className="text-[16px] text-[#232323] leading-[20px]">
@@ -59,21 +53,15 @@ const Footer = () => {
 
         <div className="lg:pl-5 lg:border-l-1 border-gray-200">
           <div className="flex justify-between items-center">
-            <p className="text-[16px] text-[#232323] font-[500]">Покупателям</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 lg:hidden"
+            <NavLink
+              to="/about"
+              className="lg:hidden text-[16px] text-[#232323] font-[500] transition duration-200 ease-in hover:text-[#1B9AE9]"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
+              О компании
+            </NavLink>
+            <p className="hidden lg:block text-[16px] text-[#232323] font-[500]">
+              Покупателям
+            </p>
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
             <li className="text-[16px] text-[#232323] leading-[20px]">
@@ -97,21 +85,15 @@ const Footer = () => {
 
         <div className="lg:pl-5 lg:border-l-1 border-gray-200">
           <div className="flex justify-between items-center">
-            <p className="text-[16px] text-[#232323] font-[500]">Сервис</p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 lg:hidden"
+            <NavLink
+              to="/service"
+              className="lg:hidden text-[16px] text-[#232323] font-[500] transition duration-200 ease-in hover:text-[#1B9AE9]"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
+              Сервис
+            </NavLink>
+            <p className="hidden lg:block text-[16px] text-[#232323] font-[500]">
+              Сервис
+            </p>
           </div>
           <ul className="hidden lg:flex flex-col gap-3 pt-5">
             <li className="text-[16px] text-[#232323] leading-[20px]">
@@ -159,23 +141,9 @@ const Footer = () => {
 
         <div className="lg:pl-5 lg:border-l-1 border-gray-200">
           <div className="flex justify-between items-center">
-            <p className="text-[16px] text-[#232323] font-[500]">
+            <p className="hidden lg:block text-[16px] text-[#232323] font-[500]">
               Связаться с нами
             </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 lg:hidden"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
           </div>
           <ul className="hidden lg:flex flex-col pt-5 text-nowrap">
             <li className="text-[15px] text-[#232323] font-[500]">

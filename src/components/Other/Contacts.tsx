@@ -114,6 +114,7 @@ const Contacts = () => {
         </div>
       </div>
       <ServicesList className="lg:px-0" />
+      <ContactForm />
     </InfoSection>
   );
 };

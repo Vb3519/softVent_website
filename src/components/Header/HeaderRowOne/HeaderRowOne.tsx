@@ -21,22 +21,6 @@ const HeaderRowOne = () => {
           </li>
           <li className="flex items-center gap-1 transition duration-200 ease-in hover:text-[#1B9AE9] cursor-pointer">
             <NavLink to="service">Сервис</NavLink>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="mt-[3px] size-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </div>
           </li>
           <li className="p-1 transition duration-200 ease-in hover:text-[#1B9AE9] cursor-pointer">
             <NavLink to="contacts">Контакты</NavLink>

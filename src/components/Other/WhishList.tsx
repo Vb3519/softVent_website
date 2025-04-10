@@ -71,7 +71,7 @@ const WhishList = () => {
           </div>
         </div>
       ) : (
-        <div className="min-h-[400px] flex flex-col gap-5">
+        <div className="min-h-[560px] flex flex-col gap-5">
           <PiStarBold className="m-auto text-[150px] md:text-[200px] text-gray-200" />
           <div className="flex flex-col gap-3 font-[inter] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">
             <h3 className="font-[600] text-center">

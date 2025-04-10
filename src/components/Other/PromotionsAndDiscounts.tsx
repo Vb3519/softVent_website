@@ -16,7 +16,7 @@ const PromotionsAndDiscounts = () => {
       <h2 className="font-[inter] text-left text-[22px] font-[600]">
         Акции и скидки
       </h2>
-      <div className="min-h-[400px] flex flex-col gap-5">
+      <div className="min-h-[560px] flex flex-col gap-5">
         <RiDiscountPercentLine className="m-auto text-[150px] md:text-[200px] text-gray-200" />
         <div className="flex flex-col gap-3 text-[14px] leading-[20px] sm:text-[16px] lg:text-[18px] lg:leading-[25px]">
           <h3 className="text-center font-[inter] font-[600] text-[14px] leading-[20px] xs:text-[16px] xl:text-[17px] xl:leading-[25px]">

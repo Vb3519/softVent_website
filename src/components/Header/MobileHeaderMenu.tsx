@@ -29,7 +29,9 @@ const MobileHeaderMenu = () => {
       {/* --- ПОИСК: --- */}
       {/* --- ПОИСК: --- */}
       {/* --- ПОИСК: --- */}
-      <SearchBar />
+      <SearchBar
+        className={`${isMobileMenuOpened ? 'active-menu' : 'hidden'}`}
+      />
       {/* --- КАТАЛОГ / ПОКУПАТЕЛЯМ / СЕРВИС: --- */}
       {/* --- КАТАЛОГ: --- */}
       {/* --- КАТАЛОГ: --- */}
@@ -44,20 +46,6 @@ const MobileHeaderMenu = () => {
             <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
               Каталог
             </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 mt-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
           </div>
 
           <ul className="flex flex-col gap-2 py-3 text-[14px] leading-[20px] xs:text-[16px]">
@@ -92,20 +80,6 @@ const MobileHeaderMenu = () => {
             <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
               Покупателям
             </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 mt-0.5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
           </div>
           <ul className="flex flex-col gap-2 py-3 text-[14px] leading-[20px] xs:text-[16px]">
             <li
@@ -132,20 +106,6 @@ const MobileHeaderMenu = () => {
             <p className="text-[15px] xs:text-[17px] text-[#232323] font-[600]">
               Сервис
             </p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-4 mt-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m19.5 8.25-7.5 7.5-7.5-7.5"
-              />
-            </svg>
           </div>
           <ul className="flex flex-col gap-2 pt-3 text-[14px] leading-[20px] xs:text-[16px]">
             <li
