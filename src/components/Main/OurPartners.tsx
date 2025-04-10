@@ -71,7 +71,7 @@ const OurPartners = () => {
         </ul>
       </div>
 
-      <div className="font-[inter] min-w-[350px] p-3 gap-3 rounded-bl-3xl rounded-tr-3xl opacity-90  hidden xl:flex">
+      <div className="font-[inter] min-w-[350px] p-3 gap-3 rounded-bl-3xl rounded-tr-3xl opacity-90 hidden xl:flex">
         <div className="flex flex-col justify-center gap-4 relative">
           <FaDraftingCompass className="text-[150px] text-gray-500 absolute top-25 left-23 opacity-20" />
           <button className="text-[20px] font-[600]">Проектировщикам</button>
